@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <object name="flyingBird" width="74.1667" height="53.8333">
+  <properties>
+   <property name="name" value="bird"/>
+   <property name="speed" type="float" value="2"/>
+   <property name="subtype" value="fly"/>
+   <property name="type" value="enemy"/>
+  </properties>
+ </object>
+</template>

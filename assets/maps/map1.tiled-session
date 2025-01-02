@@ -1,0 +1,101 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "level3.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Tous les Fichiers (*)",
+    "fileStates": {
+        ":/automap-tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "Decors.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Mockup2x.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "decors.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "level1.tmx": {
+            "expandedObjectLayers": [
+                5,
+                4
+            ],
+            "scale": 2,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 320,
+                "y": 120.25
+            }
+        },
+        "level11.tmx": {
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 2.68671875,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 495.3998255306775,
+                "y": 133.43413783076477
+            }
+        },
+        "level3.tmx": {
+            "expandedObjectLayers": [
+                5,
+                4
+            ],
+            "scale": 1.5,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 1600,
+                "y": 239.66666666666666
+            }
+        },
+        "map1.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 465.33333333333337,
+                "y": 253
+            }
+        },
+        "tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "/home/bence/Téléchargements/nature",
+    "last.objectTemplatePath": "/home/bence/Documents/L3/PCOO/Projet2/assets/maps",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "openFiles": [
+        "tileset.tsx",
+        "level3.tmx",
+        "level1.tmx"
+    ],
+    "project": "map1.tiled-project",
+    "recentFiles": [
+        "tileset.tsx",
+        "level1.tmx",
+        "level3.tmx",
+        "level11.tmx",
+        "map1.tmx",
+        "Mockup2x.tsx",
+        "Tileset.tsx",
+        "decors.tsx",
+        "Decors.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
