@@ -274,6 +274,7 @@ public abstract class GameEntity {
         }
         sprite.setTexture(null); // Libérer la texture du sprite
     }
+    public void updateSprite() {}
 
     /**
      * Méthode abstraite pour mettre à jour la physique de l'entité.

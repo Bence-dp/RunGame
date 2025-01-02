@@ -17,7 +17,8 @@ public class Player extends GameEntity {
     private float moveSpeed = 4f;   // Vitesse de déplacement horizontal du joueur
     private float jumpForce = 9f;   // Force du saut du joueur
     private static final float JUMP_VELOCITY_THRESHOLD = 0.1f;  // Seuil pour considérer que la vélocité Y est proche de zéro, permettant un nouveau saut
-
+    private String direction;
+    private String prevDirection;
     private int score = 0;  // Score du joueur, incrémenté lors de la collecte d'objets
 
     /**
@@ -34,6 +35,8 @@ public class Player extends GameEntity {
     public Player(float x, float y, Sprite sprite, World world) {
         super(x, y, sprite, world, BodyDef.BodyType.DynamicBody);
         createSensor();  // Créer le capteur autour du joueur pour détecter les objets collectables
+        this.direction = "right";
+        this.prevDirection = "right";
     }
 
     /**
@@ -41,8 +44,11 @@ public class Player extends GameEntity {
      * Cette méthode peut être étendue si nécessaire, mais actuellement, elle ne fait rien de particulier.
      */
     @Override
-    public void updatePhysics() {
-        // Logique spécifique à la physique du joueur, si nécessaire
+    public void updateSprite() {
+        if (direction != prevDirection){
+            getSprite().flip(true, false);
+            prevDirection = direction;
+        }
     }
 
     /**
@@ -52,6 +58,8 @@ public class Player extends GameEntity {
     public void moveRight() {
         Vector2 velocity = getBody().getLinearVelocity();
         getBody().setLinearVelocity(moveSpeed, velocity.y); // Définit la vitesse horizontale
+        direction = "right";
+
     }
 
     /**
@@ -61,6 +69,9 @@ public class Player extends GameEntity {
     public void moveLeft() {
         Vector2 velocity = getBody().getLinearVelocity();
         getBody().setLinearVelocity(-moveSpeed, velocity.y); // Définit la vitesse horizontale
+        direction = "left";
+
+
     }
 
     /**
@@ -114,6 +125,11 @@ public class Player extends GameEntity {
     @Override
     public void setScore(int score) {
         this.score = score;
+    }
+
+    @Override
+    public void updatePhysics() {
+
     }
 
     // Getters et Setters pour les attributs du joueur (moveSpeed, jumpForce, score)

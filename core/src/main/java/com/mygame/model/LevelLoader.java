@@ -181,7 +181,9 @@ public class LevelLoader {
         for (GameEntity entity : entityFactory.getEntities()) {
             entity.render(spriteBatch);
             entity.updatePhysics();
+
         }
+        entityFactory.getPlayer().updateSprite();
 
         spriteBatch.end();
     }
