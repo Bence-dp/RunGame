@@ -28,7 +28,7 @@ jobs:
             ${{ runner.os }}-gradle
 
       - name: Build JAR
-        run: ./gradlew clean build shadowJar
+        run: ./gradlew clean build jar
 
       - name: Generate JavaDoc
         run: ./gradlew javadoc
