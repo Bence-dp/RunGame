@@ -4,7 +4,7 @@ gradle-app.setting
 /gradle/gradle-daemon-jvm.properties
 /build/
 /android/build/
-!/core/build/
+/core/build/
 /lwjgl2/build/
 /lwjgl3/build/
 /html/build/
