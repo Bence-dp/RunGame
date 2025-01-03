@@ -36,7 +36,7 @@ jobs:
       # Debug: List files to check if they exist
       - name: List files for debugging
         run: |
-          ls -R build/
+          ls -R
 
       - name: Publish JavaDoc
         uses: actions/upload-artifact@v3
@@ -49,7 +49,7 @@ jobs:
         run: |
           ls
 
-          
+
 
       - name: Publish JAR to GitHub Releases
         uses: actions/upload-artifact@v3
