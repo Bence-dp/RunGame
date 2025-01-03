@@ -36,7 +36,7 @@ jobs:
       # Debug: List files to check if they exist
       - name: List files for debugging
         run: |
-          ls -R lwjgl3/build
+          ls -R lwjgl3/build/docs/
 
       # Upload the JavaDoc as an artifact
       - name: Publish JavaDoc
@@ -64,7 +64,6 @@ jobs:
         with:
           name: javadoc
 
-      # Step to configure git
       - name: Set up Git for deployment
         run: |
           git config --global user.name "GitHub Actions"
@@ -78,7 +77,7 @@ jobs:
       - name: Copy JavaDoc files
         run: |
           mkdir -p docs  # Crée le répertoire pour héberger la JavaDoc
-          cp -r lwjgl3/build/docs/javadoc/* docs/  # Copie la JavaDoc dans ce répertoire
+          cp -r ./javadoc/* docs/  # Copie la JavaDoc depuis l'artefact téléchargé
 
       - name: Commit and push JavaDoc to gh-pages
         run: |
