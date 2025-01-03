@@ -47,7 +47,9 @@ jobs:
       # Debug: List JAR files to check if the correct file exists
       - name: List JAR files for debugging
         run: |
-          ls 
+          ls
+
+          
 
       - name: Publish JAR to GitHub Releases
         uses: actions/upload-artifact@v3
