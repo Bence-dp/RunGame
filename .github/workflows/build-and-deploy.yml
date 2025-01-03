@@ -64,6 +64,11 @@ jobs:
         with:
           name: javadoc
 
+      # Debug: List files to check if the artifact was downloaded correctly
+      - name: List downloaded files for debugging
+        run: |
+          ls -R ./javadoc
+
       - name: Set up Git for deployment
         run: |
           git config --global user.name "GitHub Actions"
