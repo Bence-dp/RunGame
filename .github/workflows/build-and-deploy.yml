@@ -43,43 +43,4 @@ jobs:
           name: javadoc
           path: lwjgl3/build/docs/javadoc/
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'corretto'
-
-      - name: Download JavaDoc artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: javadoc
-
-      - name: Set up Git for deployment
-        uses: actions/setup-git@v3
-
-      - name: Create gh-pages branch
-        run: |
-          git checkout --orphan gh-pages  # Crée une branche "gh-pages" sans historique
-          git rm -rf .  # Supprime les fichiers existants de la branche
-
-      - name: Copy JavaDoc files
-        run: |
-          mkdir -p docs  # Crée le répertoire pour héberger la JavaDoc
-          cp -r lwjgl3/build/docs/javadoc/* docs/  # Copie la JavaDoc dans ce répertoire
-
-      - name: Commit and push JavaDoc to gh-pages
-        run: |
-          git add docs
-          git commit -m "Deploy JavaDoc to GitHub Pages"
-          git push --force --set-upstream origin gh-pages  # Pousse la JavaDoc sur la branche gh-pages
-
-      - name: Cleanup
-        run: git checkout main
