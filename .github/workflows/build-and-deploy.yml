@@ -36,7 +36,7 @@ jobs:
       # Debug: List files to check if they exist
       - name: List files for debugging
         run: |
-          ls -R
+          ls core
 
       - name: Publish JavaDoc
         uses: actions/upload-artifact@v3
