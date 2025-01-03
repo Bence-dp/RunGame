@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.mygame.lwjgl3","l":"Lwjgl3Launcher"},{"p":"com.mygame.lwjgl3","l":"StartupHelper"}];updateSearchResults();
