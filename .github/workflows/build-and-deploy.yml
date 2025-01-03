@@ -33,11 +33,21 @@ jobs:
       - name: Generate JavaDoc
         run: ./gradlew javadoc
 
+      # Debug: List files to check if they exist
+      - name: List files for debugging
+        run: |
+          ls -R build/
+
       - name: Publish JavaDoc
         uses: actions/upload-artifact@v3
         with:
           name: javadoc
           path: build/docs/javadoc/
+
+      # Debug: List JAR files to check if the correct file exists
+      - name: List JAR files for debugging
+        run: |
+          ls build/libs/
 
       - name: Publish JAR to GitHub Releases
         uses: actions/upload-artifact@v3
