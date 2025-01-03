@@ -3,7 +3,7 @@ name: Build, Generate JavaDoc, and Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Le pipeline est déclenché à chaque push sur la branche main
+      - main
 
 jobs:
   build:
@@ -33,12 +33,10 @@ jobs:
       - name: Generate JavaDoc
         run: ./gradlew javadoc
 
-      # Debug: List files to check if they exist
       - name: List files for debugging
         run: |
-          ls -R lwjgl3/build/docs/
+          ls -R lwjgl3/build
 
-      # Upload the JavaDoc as an artifact
       - name: Publish JavaDoc
         uses: actions/upload-artifact@v3
         with:
@@ -47,7 +45,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build  # Cette étape dépend de l'étape "build" précédente
+    needs: build
 
     steps:
       - name: Checkout code
@@ -64,15 +62,8 @@ jobs:
         with:
           name: javadoc
 
-      # Debug: List downloaded files for debugging
-      - name: List downloaded files for debugging
-        run: |
-          ls -R javadoc
-
       - name: Set up Git for deployment
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+        uses: actions/setup-git@v3
 
       - name: Create gh-pages branch
         run: |
@@ -82,7 +73,7 @@ jobs:
       - name: Copy JavaDoc files
         run: |
           mkdir -p docs  # Crée le répertoire pour héberger la JavaDoc
-          cp -r ./javadoc/* docs/  # Copie la JavaDoc depuis l'artefact téléchargé
+          cp -r lwjgl3/build/docs/javadoc/* docs/  # Copie la JavaDoc dans ce répertoire
 
       - name: Commit and push JavaDoc to gh-pages
         run: |
@@ -91,4 +82,4 @@ jobs:
           git push --force --set-upstream origin gh-pages  # Pousse la JavaDoc sur la branche gh-pages
 
       - name: Cleanup
-        run: git checkout main  # Retourne à la branche principale
+        run: git checkout main
