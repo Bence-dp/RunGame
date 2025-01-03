@@ -67,7 +67,7 @@ jobs:
       # Debug: List downloaded files for debugging
       - name: List downloaded files for debugging
         run: |
-          ls -R ./javadoc
+          ls -R javadoc
 
       - name: Set up Git for deployment
         run: |
