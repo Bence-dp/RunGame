@@ -14,7 +14,7 @@ Avant de commencer, assurez-vous que votre environnement de développement répo
 1. Clonez le dépôt GitHub :
 
    ```bash
-   git clone <URL_DU_DEPOT>
+   git clone https://github.com/Bence-dp/RunGame.git
    cd CourseGame
    ```
 
