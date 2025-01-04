@@ -1,7 +1,6 @@
 # CourseGame
-Di Placido Bence
 
-CourseGame est un jeu (moteur de jeu) de plateformes LibGDX, une bibliothèque Java puissante pour le développement de jeux .
+CourseGame est un jeu d'aventure rapide utilisant LibGDX, une bibliothèque Java puissante pour le développement de jeux multiplateformes.
 
 ## Prérequis
 
@@ -15,7 +14,7 @@ Avant de commencer, assurez-vous que votre environnement de développement répo
 1. Clonez le dépôt GitHub :
 
    ```bash
-   git clone https://github.com/Bence-dp/RunGame.git
+   git clone <URL_DU_DEPOT>
    cd CourseGame
    ```
 
@@ -67,6 +66,13 @@ Consultez la documentation Javadoc pour les détails sur l'API et les classes :
 
 [Javadoc CourseGame](https://bence-dp.github.io/RunGame/)
 
+## Documentation PDF
+
+Une version PDF de la documentation est également disponible :
+
+[Documentation PDF](Compte_rendu_DiPlacidoBence.pdf)
+
 ---
 
+Bon jeu et bonne programmation ! Si vous avez des questions ou des problèmes, n'hésitez pas à ouvrir une issue dans le dépôt GitHub.
 
