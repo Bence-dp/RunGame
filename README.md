@@ -1,36 +1,72 @@
 # CourseGame
+Di Placido Bence
 
-## JavaDoc
-La documentation est disponible à cette adresse : [JavaDoc](https://bence-dp.github.io/RunGame/).
+CourseGame est un jeu (moteur de jeu) de plateformes LibGDX, une bibliothèque Java puissante pour le développement de jeux .
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+## Prérequis
 
-This project was generated with a template including simple application launchers and a main class extending `Game` that sets the first screen.
+Avant de commencer, assurez-vous que votre environnement de développement répond aux exigences suivantes :
 
-## Platforms
+- **LibGDX** version 12.1 (intégrée via Gradle).
+- **Java** version 17 ou ultérieure.
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+## Installation
 
-## Gradle
+1. Clonez le dépôt GitHub :
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+   ```bash
+   git clone https://github.com/Bence-dp/RunGame.git
+   cd CourseGame
+   ```
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
+2. Configurez le projet avec Gradle (LibGDX est inclus automatiquement dans la configuration).
 
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+## Compilation et exécution
+
+Pour compiler et lancer le jeu, exécutez la commande suivante dans le répertoire racine du projet :
+
+```bash
+./gradlew run
+```
+
+Gradle téléchargera automatiquement les dépendances requises et lancera le jeu.
+
+## Commandes utiles
+
+Voici quelques commandes utiles pour le développement avec Gradle :
+
+- **Nettoyer le projet** :
+  ```bash
+  ./gradlew clean
+  ```
+
+- **Construire le projet** :
+  ```bash
+  ./gradlew build
+  ```
+
+- **Lancer le jeu** :
+  ```bash
+  ./gradlew run
+  ```
+
+- **Générer un jar exécutable** :
+  ```bash
+  ./gradlew jar
+  ```
+
+## Lien vers le dépôt GitHub
+
+Accédez au dépôt GitHub pour plus d'informations :
+
+[CourseGame sur GitHub](https://github.com/Bence-dp/RunGame)
+
+## Documentation Javadoc
+
+Consultez la documentation Javadoc pour les détails sur l'API et les classes :
+
+[Javadoc CourseGame](https://bence-dp.github.io/RunGame/)
+
+---
+
+
