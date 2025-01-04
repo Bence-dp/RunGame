@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="70" height="25" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="25">
- <tileset firstgid="1" source="tileset.tsx"/>
+ <tileset firstgid="1" source="tilesets/tileset.tsx"/>
  <layer id="1" name="ciel" width="70" height="25">
   <data encoding="csv">
 75,75,75,75,75,75,75,75,75,75,75,54,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,59,61,61,1610612804,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,54,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,
