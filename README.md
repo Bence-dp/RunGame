@@ -1,6 +1,8 @@
 # CourseGame
 CourseGame est un jeu d'aventure rapide utilisant LibGDX, une bibliothèque Java puissante pour le développement de jeux multiplateformes.
+
 [Lien](https://github.com/Bence-dp/RunGame/releases/tag/v1.1.0-beta) pour télécharger le jeu(jar)
+
 ## Prérequis
 
 Avant de commencer, assurez-vous que votre environnement de développement répond aux exigences suivantes :
