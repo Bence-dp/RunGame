@@ -281,4 +281,6 @@ public abstract class GameEntity {
      * Cette méthode doit être implémentée dans les classes concrètes.
      */
     public abstract void updatePhysics();
+
+
 }

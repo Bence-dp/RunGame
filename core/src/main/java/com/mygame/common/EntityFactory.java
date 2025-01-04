@@ -13,6 +13,8 @@ import com.mygame.model.entities.*;
 import com.mygame.model.entities.collectibles.Coin;
 import com.mygame.model.entities.enemies.FlyingEnemy;
 import com.mygame.model.entities.enemies.PatrollingEnemy;
+import com.mygame.model.entities.enemies.movement.FlyingMovement;
+import com.mygame.model.entities.enemies.movement.PatrollingMovement;
 import com.mygame.model.maps.GameMap;
 
 /**
@@ -133,14 +135,14 @@ public class EntityFactory {
 
                 switch (enemyType) {
                     case "walk":
-                        entity = new PatrollingEnemy(unitX, unitY, sprite, gamemap.getWorld(), patrolWidth, speed);
+                        entity = new PatrollingEnemy(unitX, unitY, sprite, gamemap.getWorld(),new PatrollingMovement(unitX,patrolWidth,speed));
                         break;
                     case "fly":
                         float patrolHeight = properties.get("height", Float.class) / tileHeight;
-                        entity = new FlyingEnemy(unitX, unitY, sprite, gamemap.getWorld(), patrolWidth, patrolHeight, speed);
+                        entity = new FlyingEnemy(unitX, unitY, sprite, gamemap.getWorld(),new FlyingMovement(unitX,unitY,patrolWidth,patrolHeight,speed));
                         break;
                     default:
-                        entity = new PatrollingEnemy(unitX, unitY, sprite, gamemap.getWorld(), patrolWidth, speed);
+                        entity = new PatrollingEnemy(unitX, unitY, sprite, gamemap.getWorld(),new PatrollingMovement(unitX,patrolWidth,speed));
                         break;
                 }
                 break;

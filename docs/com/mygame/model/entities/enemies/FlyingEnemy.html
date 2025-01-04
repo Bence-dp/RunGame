@@ -81,9 +81,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">FlyingEnemy</span>
 <span class="extends-implements">extends <a href="../Enemy.html" title="class in com.mygame.model.entities">Enemy</a></span></div>
-<div class="block">Représente un ennemi volant dans le jeu qui se déplace selon un motif en forme de 8.
- L'ennemi suit une trajectoire oscillante dans une zone de patrouille définie par une largeur et une hauteur.
- Il est basé sur un corps cinématique dans le moteur physique Box2D.</div>
+<div class="block">Représente un ennemi volant qui utilise une stratégie de mouvement.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -95,15 +93,13 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(float,float,com.badlogic.gdx.graphics.g2d.Sprite,com.badlogic.gdx.physics.box2d.World,float,float,float)" class="member-name-link">FlyingEnemy</a><wbr>(float&nbsp;x,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(float,float,com.badlogic.gdx.graphics.g2d.Sprite,com.badlogic.gdx.physics.box2d.World,com.mygame.model.entities.enemies.movement.MovementStrategy)" class="member-name-link">FlyingEnemy</a><wbr>(float&nbsp;x,
  float&nbsp;y,
  com.badlogic.gdx.graphics.g2d.Sprite&nbsp;sprite,
  com.badlogic.gdx.physics.box2d.World&nbsp;world,
- float&nbsp;patrolWidth,
- float&nbsp;patrolHeight,
- float&nbsp;speed)</code></div>
+ <a href="movement/MovementStrategy.html" title="interface in com.mygame.model.entities.enemies.movement">MovementStrategy</a>&nbsp;movementStrategy)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Constructeur de l'ennemi volant.</div>
+<div class="block">Constructeur de l'ennemi volant avec une stratégie de mouvement.</div>
 </div>
 </div>
 </section>
@@ -127,7 +123,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePhysics()" class="member-name-link">updatePhysics</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Met à jour la physique de l'ennemi, calculant sa nouvelle position en fonction de son mouvement sinusoïdal.</div>
+<div class="block">Met à jour la physique de l'ennemi.</div>
 </div>
 </div>
 </div>
@@ -150,27 +146,21 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(float,float,com.badlogic.gdx.graphics.g2d.Sprite,com.badlogic.gdx.physics.box2d.World,float,float,float)">
+<section class="detail" id="&lt;init&gt;(float,float,com.badlogic.gdx.graphics.g2d.Sprite,com.badlogic.gdx.physics.box2d.World,com.mygame.model.entities.enemies.movement.MovementStrategy)">
 <h3>FlyingEnemy</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">FlyingEnemy</span><wbr><span class="parameters">(float&nbsp;x,
  float&nbsp;y,
  com.badlogic.gdx.graphics.g2d.Sprite&nbsp;sprite,
  com.badlogic.gdx.physics.box2d.World&nbsp;world,
- float&nbsp;patrolWidth,
- float&nbsp;patrolHeight,
- float&nbsp;speed)</span></div>
-<div class="block">Constructeur de l'ennemi volant.
- Initialise les paramètres du FlyingEnemy avec la position de départ, la largeur et la hauteur de la zone de patrouille,
- la vitesse de l'ennemi, ainsi que la fréquence de son mouvement.</div>
+ <a href="movement/MovementStrategy.html" title="interface in com.mygame.model.entities.enemies.movement">MovementStrategy</a>&nbsp;movementStrategy)</span></div>
+<div class="block">Constructeur de l'ennemi volant avec une stratégie de mouvement.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>x</code> - La position X de départ dans le monde du jeu.</dd>
 <dd><code>y</code> - La position Y de départ dans le monde du jeu.</dd>
 <dd><code>sprite</code> - Le sprite représentant visuellement l'ennemi.</dd>
 <dd><code>world</code> - Le monde physique dans lequel l'ennemi est ajouté.</dd>
-<dd><code>patrolWidth</code> - La largeur de la zone dans laquelle l'ennemi patrouille.</dd>
-<dd><code>patrolHeight</code> - La hauteur de la zone dans laquelle l'ennemi patrouille.</dd>
-<dd><code>speed</code> - La vitesse à laquelle l'ennemi se déplace.</dd>
+<dd><code>movementStrategy</code> - La stratégie de mouvement utilisée par l'ennemi.</dd>
 </dl>
 </section>
 </li>
@@ -186,9 +176,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="updatePhysics()">
 <h3>updatePhysics</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updatePhysics</span>()</div>
-<div class="block">Met à jour la physique de l'ennemi, calculant sa nouvelle position en fonction de son mouvement sinusoïdal.
- L'ennemi suit un motif de mouvement en forme de 8 sur les axes X et Y.
- La position de l'ennemi est ajustée en fonction de la largeur et de la hauteur de sa zone de patrouille.</div>
+<div class="block">Met à jour la physique de l'ennemi.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="../Enemy.html#updatePhysics()">updatePhysics</a></code>&nbsp;in class&nbsp;<code><a href="../Enemy.html" title="class in com.mygame.model.entities">Enemy</a></code></dd>
@@ -199,8 +187,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="update(float)">
 <h3>update</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(float&nbsp;deltaTime)</span></div>
-<div class="block">Mise à jour de l'ennemi pendant chaque frame.
- Cette méthode appelle la mise à jour de la physique.</div>
+<div class="block">Mise à jour de l'ennemi pendant chaque frame.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="../Enemy.html#update(float)">update</a></code>&nbsp;in class&nbsp;<code><a href="../Enemy.html" title="class in com.mygame.model.entities">Enemy</a></code></dd>

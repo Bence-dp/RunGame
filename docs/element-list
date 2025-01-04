@@ -7,6 +7,7 @@ com.mygame.model
 com.mygame.model.entities
 com.mygame.model.entities.collectibles
 com.mygame.model.entities.enemies
+com.mygame.model.entities.enemies.movement
 com.mygame.model.maps
 com.mygame.model.maps.obstacles
 com.mygame.utils
