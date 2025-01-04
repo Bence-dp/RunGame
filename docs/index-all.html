@@ -133,6 +133,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="com/mygame/controller/commands/package-summary.html">com.mygame.controller.commands</a> - package com.mygame.controller.commands</dt>
 <dd>&nbsp;</dd>
+<dt><a href="com/mygame/controller/enemymovement/package-summary.html">com.mygame.controller.enemymovement</a> - package com.mygame.controller.enemymovement</dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/mygame/model/package-summary.html">com.mygame.model</a> - package com.mygame.model</dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/mygame/model/entities/package-summary.html">com.mygame.model.entities</a> - package com.mygame.model.entities</dt>
@@ -140,8 +142,6 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/mygame/model/entities/collectibles/package-summary.html">com.mygame.model.entities.collectibles</a> - package com.mygame.model.entities.collectibles</dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/mygame/model/entities/enemies/package-summary.html">com.mygame.model.entities.enemies</a> - package com.mygame.model.entities.enemies</dt>
-<dd>&nbsp;</dd>
-<dt><a href="com/mygame/model/entities/enemies/movement/package-summary.html">com.mygame.model.entities.enemies.movement</a> - package com.mygame.model.entities.enemies.movement</dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/mygame/model/maps/package-summary.html">com.mygame.model.maps</a> - package com.mygame.model.maps</dt>
 <dd>&nbsp;</dd>
@@ -352,13 +352,13 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Représente un ennemi volant qui utilise une stratégie de mouvement.</div>
 </dd>
-<dt><a href="com/mygame/model/entities/enemies/FlyingEnemy.html#%3Cinit%3E(float,float,com.badlogic.gdx.graphics.g2d.Sprite,com.badlogic.gdx.physics.box2d.World,com.mygame.model.entities.enemies.movement.MovementStrategy)" class="member-name-link">FlyingEnemy(float, float, Sprite, World, MovementStrategy)</a> - Constructor for class com.mygame.model.entities.enemies.<a href="com/mygame/model/entities/enemies/FlyingEnemy.html" title="class in com.mygame.model.entities.enemies">FlyingEnemy</a></dt>
+<dt><a href="com/mygame/model/entities/enemies/FlyingEnemy.html#%3Cinit%3E(float,float,com.badlogic.gdx.graphics.g2d.Sprite,com.badlogic.gdx.physics.box2d.World,com.mygame.controller.enemymovement.MovementStrategy)" class="member-name-link">FlyingEnemy(float, float, Sprite, World, MovementStrategy)</a> - Constructor for class com.mygame.model.entities.enemies.<a href="com/mygame/model/entities/enemies/FlyingEnemy.html" title="class in com.mygame.model.entities.enemies">FlyingEnemy</a></dt>
 <dd>
 <div class="block">Constructeur de l'ennemi volant avec une stratégie de mouvement.</div>
 </dd>
-<dt><a href="com/mygame/model/entities/enemies/movement/FlyingMovement.html" class="type-name-link" title="class in com.mygame.model.entities.enemies.movement">FlyingMovement</a> - Class in <a href="com/mygame/model/entities/enemies/movement/package-summary.html">com.mygame.model.entities.enemies.movement</a></dt>
+<dt><a href="com/mygame/controller/enemymovement/FlyingMovement.html" class="type-name-link" title="class in com.mygame.controller.enemymovement">FlyingMovement</a> - Class in <a href="com/mygame/controller/enemymovement/package-summary.html">com.mygame.controller.enemymovement</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/mygame/model/entities/enemies/movement/FlyingMovement.html#%3Cinit%3E(float,float,float,float,float)" class="member-name-link">FlyingMovement(float, float, float, float, float)</a> - Constructor for class com.mygame.model.entities.enemies.movement.<a href="com/mygame/model/entities/enemies/movement/FlyingMovement.html" title="class in com.mygame.model.entities.enemies.movement">FlyingMovement</a></dt>
+<dt><a href="com/mygame/controller/enemymovement/FlyingMovement.html#%3Cinit%3E(float,float,float,float,float)" class="member-name-link">FlyingMovement(float, float, float, float, float)</a> - Constructor for class com.mygame.controller.enemymovement.<a href="com/mygame/controller/enemymovement/FlyingMovement.html" title="class in com.mygame.controller.enemymovement">FlyingMovement</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:G">G</h2>
@@ -638,6 +638,12 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:J">J</h2>
 <dl class="index">
+<dt><a href="com/mygame/utils/JsonLoader.html" class="type-name-link" title="class in com.mygame.utils">JsonLoader</a> - Class in <a href="com/mygame/utils/package-summary.html">com.mygame.utils</a></dt>
+<dd>
+<div class="block">Classe utilitaire pour charger les données JSON, spécifiquement les niveaux du jeu.</div>
+</dd>
+<dt><a href="com/mygame/utils/JsonLoader.html#%3Cinit%3E()" class="member-name-link">JsonLoader()</a> - Constructor for class com.mygame.utils.<a href="com/mygame/utils/JsonLoader.html" title="class in com.mygame.utils">JsonLoader</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="com/mygame/model/entities/Player.html#jump()" class="member-name-link">jump()</a> - Method in class com.mygame.model.entities.<a href="com/mygame/model/entities/Player.html" title="class in com.mygame.model.entities">Player</a></dt>
 <dd>
 <div class="block">Fait sauter le joueur.</div>
@@ -711,6 +717,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="com/mygame/utils/saver/LoadManager.html#loadGame()" class="member-name-link">loadGame()</a> - Static method in class com.mygame.utils.saver.<a href="com/mygame/utils/saver/LoadManager.html" title="class in com.mygame.utils.saver">LoadManager</a></dt>
 <dd>
 <div class="block">Charge les données de sauvegarde depuis le fichier de sauvegarde.</div>
+</dd>
+<dt><a href="com/mygame/utils/JsonLoader.html#loadLevels(java.lang.String)" class="member-name-link">loadLevels(String)</a> - Static method in class com.mygame.utils.<a href="com/mygame/utils/JsonLoader.html" title="class in com.mygame.utils">JsonLoader</a></dt>
+<dd>
+<div class="block">Charge les niveaux à partir d'un fichier JSON.</div>
 </dd>
 <dt><a href="com/mygame/utils/saver/LoadManager.html" class="type-name-link" title="class in com.mygame.utils.saver">LoadManager</a> - Class in <a href="com/mygame/utils/saver/package-summary.html">com.mygame.utils.saver</a></dt>
 <dd>
@@ -791,7 +801,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Constructeur de la commande de déplacement à gauche.</div>
 </dd>
-<dt><a href="com/mygame/model/entities/enemies/movement/MovementStrategy.html" class="type-name-link" title="interface in com.mygame.model.entities.enemies.movement">MovementStrategy</a> - Interface in <a href="com/mygame/model/entities/enemies/movement/package-summary.html">com.mygame.model.entities.enemies.movement</a></dt>
+<dt><a href="com/mygame/controller/enemymovement/MovementStrategy.html" class="type-name-link" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a> - Interface in <a href="com/mygame/controller/enemymovement/package-summary.html">com.mygame.controller.enemymovement</a></dt>
 <dd>
 <div class="block">Interface définissant une stratégie de mouvement pour les ennemis.</div>
 </dd>
@@ -825,13 +835,13 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Représente un ennemi patrouillant qui utilise une stratégie de mouvement horizontal.</div>
 </dd>
-<dt><a href="com/mygame/model/entities/enemies/PatrollingEnemy.html#%3Cinit%3E(float,float,com.badlogic.gdx.graphics.g2d.Sprite,com.badlogic.gdx.physics.box2d.World,com.mygame.model.entities.enemies.movement.MovementStrategy)" class="member-name-link">PatrollingEnemy(float, float, Sprite, World, MovementStrategy)</a> - Constructor for class com.mygame.model.entities.enemies.<a href="com/mygame/model/entities/enemies/PatrollingEnemy.html" title="class in com.mygame.model.entities.enemies">PatrollingEnemy</a></dt>
+<dt><a href="com/mygame/model/entities/enemies/PatrollingEnemy.html#%3Cinit%3E(float,float,com.badlogic.gdx.graphics.g2d.Sprite,com.badlogic.gdx.physics.box2d.World,com.mygame.controller.enemymovement.MovementStrategy)" class="member-name-link">PatrollingEnemy(float, float, Sprite, World, MovementStrategy)</a> - Constructor for class com.mygame.model.entities.enemies.<a href="com/mygame/model/entities/enemies/PatrollingEnemy.html" title="class in com.mygame.model.entities.enemies">PatrollingEnemy</a></dt>
 <dd>
 <div class="block">Constructeur de l'ennemi patrouillant.</div>
 </dd>
-<dt><a href="com/mygame/model/entities/enemies/movement/PatrollingMovement.html" class="type-name-link" title="class in com.mygame.model.entities.enemies.movement">PatrollingMovement</a> - Class in <a href="com/mygame/model/entities/enemies/movement/package-summary.html">com.mygame.model.entities.enemies.movement</a></dt>
+<dt><a href="com/mygame/controller/enemymovement/PatrollingMovement.html" class="type-name-link" title="class in com.mygame.controller.enemymovement">PatrollingMovement</a> - Class in <a href="com/mygame/controller/enemymovement/package-summary.html">com.mygame.controller.enemymovement</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/mygame/model/entities/enemies/movement/PatrollingMovement.html#%3Cinit%3E(float,float,float)" class="member-name-link">PatrollingMovement(float, float, float)</a> - Constructor for class com.mygame.model.entities.enemies.movement.<a href="com/mygame/model/entities/enemies/movement/PatrollingMovement.html" title="class in com.mygame.model.entities.enemies.movement">PatrollingMovement</a></dt>
+<dt><a href="com/mygame/controller/enemymovement/PatrollingMovement.html#%3Cinit%3E(float,float,float)" class="member-name-link">PatrollingMovement(float, float, float)</a> - Constructor for class com.mygame.controller.enemymovement.<a href="com/mygame/controller/enemymovement/PatrollingMovement.html" title="class in com.mygame.controller.enemymovement">PatrollingMovement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/mygame/view/screen/EndGameScreen.html#pause()" class="member-name-link">pause()</a> - Method in class com.mygame.view.screen.<a href="com/mygame/view/screen/EndGameScreen.html" title="class in com.mygame.view.screen">EndGameScreen</a></dt>
 <dd>
@@ -1232,13 +1242,13 @@ loadScripts(document, 'script');</script>
 <div class="block">Met à jour les commandes en fonction des nouvelles touches définies dans les paramètres
  (re-mappées par l'utilisateur).</div>
 </dd>
-<dt><a href="com/mygame/model/entities/enemies/movement/FlyingMovement.html#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)" class="member-name-link">updateMovement(Body, float)</a> - Method in class com.mygame.model.entities.enemies.movement.<a href="com/mygame/model/entities/enemies/movement/FlyingMovement.html" title="class in com.mygame.model.entities.enemies.movement">FlyingMovement</a></dt>
+<dt><a href="com/mygame/controller/enemymovement/FlyingMovement.html#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)" class="member-name-link">updateMovement(Body, float)</a> - Method in class com.mygame.controller.enemymovement.<a href="com/mygame/controller/enemymovement/FlyingMovement.html" title="class in com.mygame.controller.enemymovement">FlyingMovement</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="com/mygame/model/entities/enemies/movement/MovementStrategy.html#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)" class="member-name-link">updateMovement(Body, float)</a> - Method in interface com.mygame.model.entities.enemies.movement.<a href="com/mygame/model/entities/enemies/movement/MovementStrategy.html" title="interface in com.mygame.model.entities.enemies.movement">MovementStrategy</a></dt>
+<dt><a href="com/mygame/controller/enemymovement/MovementStrategy.html#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)" class="member-name-link">updateMovement(Body, float)</a> - Method in interface com.mygame.controller.enemymovement.<a href="com/mygame/controller/enemymovement/MovementStrategy.html" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a></dt>
 <dd>
 <div class="block">Met à jour le mouvement en fonction de la physique et de la logique de la stratégie.</div>
 </dd>
-<dt><a href="com/mygame/model/entities/enemies/movement/PatrollingMovement.html#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)" class="member-name-link">updateMovement(Body, float)</a> - Method in class com.mygame.model.entities.enemies.movement.<a href="com/mygame/model/entities/enemies/movement/PatrollingMovement.html" title="class in com.mygame.model.entities.enemies.movement">PatrollingMovement</a></dt>
+<dt><a href="com/mygame/controller/enemymovement/PatrollingMovement.html#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)" class="member-name-link">updateMovement(Body, float)</a> - Method in class com.mygame.controller.enemymovement.<a href="com/mygame/controller/enemymovement/PatrollingMovement.html" title="class in com.mygame.controller.enemymovement">PatrollingMovement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/mygame/model/entities/Collectible.html#updatePhysics()" class="member-name-link">updatePhysics()</a> - Method in class com.mygame.model.entities.<a href="com/mygame/model/entities/Collectible.html" title="class in com.mygame.model.entities">Collectible</a></dt>
 <dd>&nbsp;</dd>

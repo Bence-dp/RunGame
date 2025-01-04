@@ -3,11 +3,11 @@ com.mygame.common
 com.mygame.config
 com.mygame.controller
 com.mygame.controller.commands
+com.mygame.controller.enemymovement
 com.mygame.model
 com.mygame.model.entities
 com.mygame.model.entities.collectibles
 com.mygame.model.entities.enemies
-com.mygame.model.entities.enemies.movement
 com.mygame.model.maps
 com.mygame.model.maps.obstacles
 com.mygame.utils

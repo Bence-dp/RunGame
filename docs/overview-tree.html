@@ -55,11 +55,11 @@ loadScripts(document, 'script');</script>
 <li><a href="com/mygame/config/package-tree.html">com.mygame.config</a>, </li>
 <li><a href="com/mygame/controller/package-tree.html">com.mygame.controller</a>, </li>
 <li><a href="com/mygame/controller/commands/package-tree.html">com.mygame.controller.commands</a>, </li>
+<li><a href="com/mygame/controller/enemymovement/package-tree.html">com.mygame.controller.enemymovement</a>, </li>
 <li><a href="com/mygame/model/package-tree.html">com.mygame.model</a>, </li>
 <li><a href="com/mygame/model/entities/package-tree.html">com.mygame.model.entities</a>, </li>
 <li><a href="com/mygame/model/entities/collectibles/package-tree.html">com.mygame.model.entities.collectibles</a>, </li>
 <li><a href="com/mygame/model/entities/enemies/package-tree.html">com.mygame.model.entities.enemies</a>, </li>
-<li><a href="com/mygame/model/entities/enemies/movement/package-tree.html">com.mygame.model.entities.enemies.movement</a>, </li>
 <li><a href="com/mygame/model/maps/package-tree.html">com.mygame.model.maps</a>, </li>
 <li><a href="com/mygame/model/maps/obstacles/package-tree.html">com.mygame.model.maps.obstacles</a>, </li>
 <li><a href="com/mygame/utils/package-tree.html">com.mygame.utils</a>, </li>
@@ -81,7 +81,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">com.mygame.common.<a href="com/mygame/common/EntityFactory.html" class="type-name-link" title="class in com.mygame.common">EntityFactory</a></li>
 <li class="circle">com.mygame.utils.ContactListener.<a href="com/mygame/utils/ContactListener/ExitListener.html" class="type-name-link" title="class in com.mygame.utils.ContactListener">ExitListener</a> (implements com.badlogic.gdx.physics.box2d.ContactListener)</li>
 <li class="circle">com.mygame.view.screen.<a href="com/mygame/view/screen/FirstScreen.html" class="type-name-link" title="class in com.mygame.view.screen">FirstScreen</a> (implements com.badlogic.gdx.Screen)</li>
-<li class="circle">com.mygame.model.entities.enemies.movement.<a href="com/mygame/model/entities/enemies/movement/FlyingMovement.html" class="type-name-link" title="class in com.mygame.model.entities.enemies.movement">FlyingMovement</a> (implements com.mygame.model.entities.enemies.movement.<a href="com/mygame/model/entities/enemies/movement/MovementStrategy.html" title="interface in com.mygame.model.entities.enemies.movement">MovementStrategy</a>)</li>
+<li class="circle">com.mygame.controller.enemymovement.<a href="com/mygame/controller/enemymovement/FlyingMovement.html" class="type-name-link" title="class in com.mygame.controller.enemymovement">FlyingMovement</a> (implements com.mygame.controller.enemymovement.<a href="com/mygame/controller/enemymovement/MovementStrategy.html" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a>)</li>
 <li class="circle">com.badlogic.gdx.Game (implements com.badlogic.gdx.ApplicationListener)
 <ul>
 <li class="circle">com.mygame.<a href="com/mygame/Main.html" class="type-name-link" title="class in com.mygame">Main</a></li>
@@ -107,6 +107,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">com.mygame.controller.<a href="com/mygame/controller/GameManager.html" class="type-name-link" title="class in com.mygame.controller">GameManager</a></li>
 <li class="circle">com.mygame.model.maps.<a href="com/mygame/model/maps/GameMap.html" class="type-name-link" title="class in com.mygame.model.maps">GameMap</a></li>
 <li class="circle">com.mygame.controller.<a href="com/mygame/controller/InputHandler.html" class="type-name-link" title="class in com.mygame.controller">InputHandler</a> (implements com.badlogic.gdx.InputProcessor)</li>
+<li class="circle">com.mygame.utils.<a href="com/mygame/utils/JsonLoader.html" class="type-name-link" title="class in com.mygame.utils">JsonLoader</a></li>
 <li class="circle">com.mygame.controller.commands.<a href="com/mygame/controller/commands/JumpCommand.html" class="type-name-link" title="class in com.mygame.controller.commands">JumpCommand</a> (implements com.mygame.controller.commands.<a href="com/mygame/controller/commands/Command.html" title="interface in com.mygame.controller.commands">Command</a>)</li>
 <li class="circle">com.mygame.config.<a href="com/mygame/config/KeyBindings.html" class="type-name-link" title="class in com.mygame.config">KeyBindings</a></li>
 <li class="circle">com.mygame.model.maps.<a href="com/mygame/model/maps/Level.html" class="type-name-link" title="class in com.mygame.model.maps">Level</a> (implements java.io.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a>)</li>
@@ -128,7 +129,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">com.mygame.model.maps.obstacles.<a href="com/mygame/model/maps/obstacles/Teleporter.html" class="type-name-link" title="class in com.mygame.model.maps.obstacles">Teleporter</a></li>
 </ul>
 </li>
-<li class="circle">com.mygame.model.entities.enemies.movement.<a href="com/mygame/model/entities/enemies/movement/PatrollingMovement.html" class="type-name-link" title="class in com.mygame.model.entities.enemies.movement">PatrollingMovement</a> (implements com.mygame.model.entities.enemies.movement.<a href="com/mygame/model/entities/enemies/movement/MovementStrategy.html" title="interface in com.mygame.model.entities.enemies.movement">MovementStrategy</a>)</li>
+<li class="circle">com.mygame.controller.enemymovement.<a href="com/mygame/controller/enemymovement/PatrollingMovement.html" class="type-name-link" title="class in com.mygame.controller.enemymovement">PatrollingMovement</a> (implements com.mygame.controller.enemymovement.<a href="com/mygame/controller/enemymovement/MovementStrategy.html" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a>)</li>
 <li class="circle">com.mygame.utils.saver.<a href="com/mygame/utils/saver/SaveData.html" class="type-name-link" title="class in com.mygame.utils.saver">SaveData</a> (implements java.io.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a>)</li>
 <li class="circle">com.mygame.utils.saver.<a href="com/mygame/utils/saver/SaveManager.html" class="type-name-link" title="class in com.mygame.utils.saver">SaveManager</a></li>
 <li class="circle">com.mygame.view.screen.<a href="com/mygame/view/screen/SettingsScreen.html" class="type-name-link" title="class in com.mygame.view.screen">SettingsScreen</a> (implements com.badlogic.gdx.Screen)</li>
@@ -142,7 +143,7 @@ loadScripts(document, 'script');</script>
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
 <li class="circle">com.mygame.controller.commands.<a href="com/mygame/controller/commands/Command.html" class="type-name-link" title="interface in com.mygame.controller.commands">Command</a></li>
-<li class="circle">com.mygame.model.entities.enemies.movement.<a href="com/mygame/model/entities/enemies/movement/MovementStrategy.html" class="type-name-link" title="interface in com.mygame.model.entities.enemies.movement">MovementStrategy</a></li>
+<li class="circle">com.mygame.controller.enemymovement.<a href="com/mygame/controller/enemymovement/MovementStrategy.html" class="type-name-link" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a></li>
 </ul>
 </section>
 </main>
