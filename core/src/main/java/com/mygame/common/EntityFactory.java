@@ -13,8 +13,8 @@ import com.mygame.model.entities.*;
 import com.mygame.model.entities.collectibles.Coin;
 import com.mygame.model.entities.enemies.FlyingEnemy;
 import com.mygame.model.entities.enemies.PatrollingEnemy;
-import com.mygame.model.entities.enemies.movement.FlyingMovement;
-import com.mygame.model.entities.enemies.movement.PatrollingMovement;
+import com.mygame.controller.enemymovement.FlyingMovement;
+import com.mygame.controller.enemymovement.PatrollingMovement;
 import com.mygame.model.maps.GameMap;
 
 /**

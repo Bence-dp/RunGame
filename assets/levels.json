@@ -1,5 +1,5 @@
 [
   { "name": "Level 1", "mapPath": "maps/level1.tmx" },
-  { "name": "Level 2", "mapPath": "maps/level1.tmx" },
+  { "name": "Level 2", "mapPath": "maps/level2.tmx" },
   { "name": "Level 3", "mapPath": "maps/level3.tmx" }
 ]

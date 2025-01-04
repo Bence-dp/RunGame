@@ -1,4 +1,4 @@
-package com.mygame.model.entities.enemies.movement;
+package com.mygame.controller.enemymovement;
 
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.math.Vector2;

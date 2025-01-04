@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level3.tmx",
+    "activeFile": "level2.tmx",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Tous les Fichiers (*)",
@@ -29,14 +29,14 @@
         },
         "level1.tmx": {
             "expandedObjectLayers": [
-                5,
-                4
+                4,
+                5
             ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 320,
-                "y": 120.25
+                "x": 378,
+                "y": 124.75
             }
         },
         "level11.tmx": {
@@ -50,16 +50,27 @@
                 "y": 133.43413783076477
             }
         },
+        "level2.tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 2,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 661,
+                "y": 218.25
+            }
+        },
         "level3.tmx": {
             "expandedObjectLayers": [
-                5,
-                4
+                4,
+                5
             ],
             "scale": 1.5,
-            "selectedLayer": 3,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 221.3333333333333,
-                "y": 251.66666666666666
+                "x": 2954,
+                "y": 277
             }
         },
         "map1.tmx": {
@@ -77,19 +88,23 @@
     },
     "last.imagePath": "/home/bence/Téléchargements/nature",
     "last.objectTemplatePath": "/home/bence/Documents/L3/PCOO/Projet2/assets/maps",
+    "map.height": 30,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
+    "map.width": 60,
     "openFiles": [
         "tileset.tsx",
         "level3.tmx",
-        "level1.tmx"
+        "level1.tmx",
+        "level2.tmx"
     ],
     "project": "map1.tiled-project",
     "recentFiles": [
         "tileset.tsx",
-        "level1.tmx",
         "level3.tmx",
+        "level1.tmx",
+        "level2.tmx",
         "level11.tmx",
         "map1.tmx",
         "Mockup2x.tsx",

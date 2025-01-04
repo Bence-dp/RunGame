@@ -66,10 +66,41 @@ public class GameMap {
                 }
             }
         }
+        createBorderObstacles();
 
         // Crée la zone de mort en bas de la carte
         DeadZone deadZone = new DeadZone(world, PPM);
         deadZone.createBody(0, 0, getMapWidth(), 1f);
+    }
+    private void createBorderObstacles() {
+        float tileWidth = obstacleLayer.getTileWidth();
+        float tileHeight = obstacleLayer.getTileHeight();
+        Obstacle obstacle;
+        // Obstacle du haut de la carte
+        for (int x = 0; x < getMapWidth(); x++) {
+            obstacle= new SolidObstacle(world, PPM); // Bord supérieur
+            obstacle.createBody(x * tileWidth / PPM, getMapHeight()-1 * tileHeight / PPM, tileWidth / PPM, tileHeight / PPM);
+
+        }
+
+        // Obstacle du bas de la carte
+        for (int x = 0; x < getMapWidth(); x++) {
+            obstacle = new SolidObstacle(world, PPM); // Bord inférieur
+            obstacle.createBody(x * tileWidth / PPM, -1 * tileHeight / PPM, tileWidth / PPM, tileHeight / PPM);
+
+        }
+
+        // Obstacle à gauche de la carte
+        for (int y = 0; y < getMapHeight(); y++) {
+            obstacle = new SolidObstacle(world, PPM); // Bord inférieur
+            obstacle.createBody(-1*tileWidth / PPM, y * tileHeight / PPM, tileWidth / PPM, tileHeight / PPM);
+        }
+
+        // Obstacle à droite de la carte
+        for (int y = 0; y < getMapHeight(); y++) {
+            obstacle = new SolidObstacle(world, PPM);
+            obstacle.createBody(getMapWidth()  * tileWidth / PPM, y * tileHeight / PPM, tileWidth / PPM, tileHeight / PPM);
+        }
     }
 
     /**

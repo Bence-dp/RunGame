@@ -103,9 +103,22 @@ public class MenuScreen implements Screen {
                 if (savedData != null) {
                     Level savedLevel = savedData.getLastLevel();
                     if (savedLevel != null) {
-                        gameManager.setCurrentLevel(savedLevel);
-                        gameManager.setCoin(savedData.getCoins());
-                        game.setScreen(new LevelScreen(gameManager, savedLevel));
+                        // Vérifier si le niveau sauvegardé existe dans gameManager.getLevels()
+                        boolean levelExists = false;
+                        for (Level level : gameManager.getLevels()) {
+                            if (level.getPath().equals(savedLevel.getPath())) {
+                                levelExists = true;
+                                break;
+                            }
+                        }
+
+                        if (levelExists) {
+                            gameManager.setCurrentLevel(savedLevel);
+                            gameManager.setCoin(savedData.getCoins());
+                            game.setScreen(new LevelScreen(gameManager, savedLevel));
+                        } else {
+                            System.out.println("Le niveau sauvegardé n'existe pas dans les niveaux disponibles.");
+                        }
                     } else {
                         System.out.println("Niveau sauvegardé introuvable.");
                     }
@@ -117,6 +130,7 @@ public class MenuScreen implements Screen {
 
         stage.addActor(button);
     }
+
 
     /**
      * Crée et ajoute un bouton permettant de reprendre la partie actuelle.

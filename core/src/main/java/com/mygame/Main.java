@@ -6,6 +6,7 @@ import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.Array;
 import com.mygame.controller.GameManager;
 import com.mygame.model.maps.Level;
+import com.mygame.utils.JsonLoader;
 import com.mygame.utils.saver.SaveData;
 import com.mygame.utils.saver.SaveManager;
 import com.mygame.view.screen.FirstScreen;
@@ -27,34 +28,16 @@ public class Main extends Game {
     @Override
     public void create() {
         // Charger les niveaux depuis le fichier JSON
-        levels = loadLevels("levels.json");
+        levels = JsonLoader.loadLevels("levels.json");
 
         // Initialiser le GameManager avec les niveaux chargés et le premier niveau
-        gameManager = GameManager.getInstance(this, levels, levels.get(0));
+        gameManager = GameManager.getInstance(this,levels ,levels.get(0));
 
         // Lancer l'écran de démarrage
         setScreen(new FirstScreen(gameManager));
     }
 
-    /**
-     * Charge les niveaux à partir d'un fichier JSON.
-     *
-     * @param path Le chemin du fichier JSON contenant la description des niveaux.
-     * @return Une liste de niveaux (Array) chargée à partir du fichier JSON.
-     */
-    private Array<Level> loadLevels(String path) {
-        Json json = new Json();
 
-        // Charger les niveaux depuis le fichier JSON
-        Array<Level> levels = json.fromJson(Array.class, Level.class, Gdx.files.internal(path));
-
-        // Lier les niveaux entre eux (chaînage des niveaux)
-        for (int i = 0; i < levels.size - 1; i++) {
-            levels.get(i).setNext(levels.get(i + 1));  // Chaque niveau a un niveau suivant
-        }
-
-        return levels;
-    }
 
     /**
      * Méthode appelée lors de la fermeture du jeu.

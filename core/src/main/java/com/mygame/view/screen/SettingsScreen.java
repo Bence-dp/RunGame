@@ -31,7 +31,6 @@ public class SettingsScreen implements Screen {
     private final BitmapFont font;
     private final KeyBindings keyBindings;
     private String message = "Cliquez sur Remap pour remapper";
-    private final Array<Level> levels;
     private boolean isRemapping = false;
     private String remappingAction = null;
     private GameManager gameManager;
@@ -46,7 +45,6 @@ public class SettingsScreen implements Screen {
         this.gameManager = gameManager;
         this.game = gameManager.getGame();
         this.keyBindings = gameManager.getKeyBindings();
-        this.levels = gameManager.getLevels();
         this.stage = new Stage();
         this.batch = new SpriteBatch();
         this.font = new BitmapFont();

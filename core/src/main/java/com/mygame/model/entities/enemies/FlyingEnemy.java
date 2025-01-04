@@ -2,10 +2,9 @@ package com.mygame.model.entities.enemies;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.mygame.model.entities.Enemy;
-import com.mygame.model.entities.enemies.movement.MovementStrategy;
+import com.mygame.controller.enemymovement.MovementStrategy;
 
 /**
  * Représente un ennemi volant qui utilise une stratégie de mouvement.
