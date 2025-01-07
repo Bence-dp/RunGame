@@ -63,6 +63,7 @@ public class LevelLoader {
         // Charger les entités du niveau
         entityFactory.loadEntitiesFromMap(gameMap);
         gameManager.setupCommands(entityFactory.getPlayer());
+        gameManager.setNeedSave(true);
         Gdx.input.setInputProcessor(new InputHandler(entityFactory.getPlayer()));
         loseListener = new LoseListener(gameManager.getGame(), this, gameManager);
         collectibleListener = new CollectibleListener(entityFactory,soundFactory);

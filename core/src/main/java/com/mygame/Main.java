@@ -46,10 +46,13 @@ public class Main extends Game {
     @Override
     public void dispose() {
         // Sauvegarder les données du jeu avant la fermeture
-        SaveData saveData = new SaveData(gameManager.getCurrentLevel(), gameManager.getCoin());
-        SaveManager.saveGame(saveData);
+        if (gameManager.getNeedSave()) {
+            SaveData saveData = new SaveData(gameManager.getCurrentLevel(), gameManager.getCoin());
+            SaveManager.saveGame(saveData);
 
-        System.out.println("Game saved during shutdown.");
+
+            System.out.println("Game saved during shutdown.");
+        }
 
         // Appeler dispose() sur les autres ressources
         super.dispose();

@@ -35,6 +35,7 @@ public class GameManager {
     private Level currentLevel;
     private KeyBindings keyBindings;
     private Array<Level> levels;
+    private Boolean needSave;
     private Main game;
     private HashMap<Integer, Command> commands;
     private int coin;
@@ -51,6 +52,7 @@ public class GameManager {
         this.currentLevel = currentLevel;
         this.coin = 0;
         this.game = game;
+        this.needSave = false;
         this.soundFactory = SoundFactory.getInstance();
         soundFactory.loadSound("piece");
         soundFactory.loadSound("jump");
@@ -127,6 +129,13 @@ public class GameManager {
         commands.put(keyBindings.getMoveLeftKey(), new MoveLeftCommand(player));
         commands.put(keyBindings.getMoveRightKey(), new MoveRightCommand(player));
         commands.put(keyBindings.getJumpKey(), new JumpCommand(player));
+    }
+
+    public void setNeedSave(Boolean needSave) {
+        this.needSave = needSave;
+    }
+    public boolean getNeedSave() {
+        return needSave;
     }
 
     /**
