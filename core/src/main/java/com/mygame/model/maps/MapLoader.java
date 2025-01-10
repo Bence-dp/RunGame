@@ -2,7 +2,6 @@ package com.mygame.model.maps;
 
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 
 /**
  * La classe {@code MapLoader} est responsable du chargement des cartes Tiled (.tmx) dans le jeu.

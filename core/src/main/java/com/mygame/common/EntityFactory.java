@@ -119,42 +119,55 @@ public class EntityFactory {
 
         switch (type) {
             case "player":
-                sprite = new Sprite(textureCache.get("player"));
-                sprite.setSize(0.8f, 0.8f);
-                entity = new Player(unitX, unitY, sprite, gamemap.getWorld());
-                entity.setScore(gameManager.getCoin());
+                    sprite = new Sprite(textureCache.get("player"));
+                    sprite.setSize(0.8f, 0.8f);
+                    entity = new Player(unitX, unitY, sprite, gamemap.getWorld());
+                    entity.setScore(gameManager.getCoin());
+
                 break;
 
             case "enemy":
-                float patrolWidth = properties.get("width", Float.class) / tileWidth;
-                float speed = properties.get("speed", Float.class);
-                String texture = properties.get("name", String.class);
-                String enemyType = properties.get("subtype", String.class);
-                sprite = new Sprite(textureCache.get(texture));
-                sprite.setSize(1, 1);
+                // Vérification des propriétés nécessaires pour un ennemi
+                if (properties.containsKey("width") && properties.containsKey("speed") && properties.containsKey("name")) {
+                    float patrolWidth = properties.get("width", Float.class) / tileWidth;
+                    float speed = properties.get("speed", Float.class);
+                    String texture = properties.get("name", String.class);
+                    String enemyType = properties.get("subtype", String.class); // "subtype" est optionnel
 
-                switch (enemyType) {
-                    case "walk":
-                        entity = new PatrollingEnemy(unitX, unitY, sprite, gamemap.getWorld(),new PatrollingMovement(unitX,patrolWidth,speed));
-                        break;
-                    case "fly":
-                        float patrolHeight = properties.get("height", Float.class) / tileHeight;
-                        entity = new FlyingEnemy(unitX, unitY, sprite, gamemap.getWorld(),new FlyingMovement(unitX,unitY,patrolWidth,patrolHeight,speed));
-                        break;
-                    default:
-                        entity = new PatrollingEnemy(unitX, unitY, sprite, gamemap.getWorld(),new PatrollingMovement(unitX,patrolWidth,speed));
-                        break;
+                    sprite = new Sprite(textureCache.get(texture));
+                    sprite.setSize(1, 1);
+
+                    if ("walk".equals(enemyType)) {
+                        entity = new PatrollingEnemy(unitX, unitY, sprite, gamemap.getWorld(), new PatrollingMovement(unitX, patrolWidth, speed));
+                    } else if ("fly".equals(enemyType)) {
+                        if (properties.containsKey("height")) {
+                            float patrolHeight = properties.get("height", Float.class) / tileHeight;
+                            entity = new FlyingEnemy(unitX, unitY, sprite, gamemap.getWorld(), new FlyingMovement(unitX, unitY, patrolWidth, patrolHeight, speed));
+                        } else {
+                            System.err.println("Propriété 'height' manquante pour l'entité flying enemy.");
+                        }
+                    } else {
+                        entity = new PatrollingEnemy(unitX, unitY, sprite, gamemap.getWorld(), new PatrollingMovement(unitX, patrolWidth, speed));
+                    }
+                } else {
+                    System.err.println("Propriétés manquantes pour l'entité enemy : 'width', 'speed' ou 'name'.");
                 }
                 break;
 
             case "collectible":
-                String subtype = (String) properties.get("subtype");
-                sprite = new Sprite(textureCache.get(subtype));
-                sprite.setSize(0.5f, 0.5f);
-                if ("coin".equals(subtype)) {
-                    entity = new Coin(unitX, unitY, sprite, gamemap.getWorld());
+                // Vérification de la propriété "subtype"
+                if (properties.containsKey("subtype")) {
+                    String subtype = (String) properties.get("subtype");
+                    sprite = new Sprite(textureCache.get(subtype));
+                    sprite.setSize(0.5f, 0.5f);
+
+                    if ("coin".equals(subtype)) {
+                        entity = new Coin(unitX, unitY, sprite, gamemap.getWorld());
+                    } else {
+                        System.err.println("Type de collectible inconnu : " + subtype);
+                    }
                 } else {
-                    System.err.println("Type de collectible inconnu : " + subtype);
+                    System.err.println("Propriété 'subtype' manquante pour l'entité collectible.");
                 }
                 break;
 
@@ -165,6 +178,7 @@ public class EntityFactory {
 
         return entity;
     }
+
 
     /**
      * Récupère le joueur depuis la liste des entités.

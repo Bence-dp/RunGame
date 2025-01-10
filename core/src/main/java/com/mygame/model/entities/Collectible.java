@@ -15,7 +15,7 @@ public class Collectible extends GameEntity {
     }
 
     // Crée le capteur pour la collecte
-    private void createCollectibleSensor() {
+    public void createCollectibleSensor() {
         PolygonShape shape = new PolygonShape();
         shape.setAsBox(getSprite().getWidth()/2, getSprite().getHeight()/2); // Ajustez la taille en fonction de votre collectible
 

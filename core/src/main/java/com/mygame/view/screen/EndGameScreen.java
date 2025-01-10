@@ -82,10 +82,10 @@ public class EndGameScreen implements Screen {
         menuButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new MenuScreen(gameManager)); // Remplacer par votre écran de menu principal
+                game.setScreen(new MenuScreen(gameManager));
             }
         });
-        table.add(menuButton).padTop(50); // Ajouter le bouton à la table avec un espacement
+        table.add(menuButton).padTop(50);
 
         // Ajout du tableau au stage
         stage.addActor(table);
@@ -110,10 +110,9 @@ public class EndGameScreen implements Screen {
 
         // Gérer l'entrée utilisateur
         if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
-            // Redémarrer le niveau ou faire autre chose, comme revenir au menu
             gameManager.setCoin(0); // Réinitialiser les pièces collectées
             gameManager.setCurrentLevel(gameManager.getLevels().get(0)); // Redémarrer le niveau initial
-            game.setScreen(new LevelScreen(gameManager, gameManager.getLevels().get(0))); // Remplacer par votre logique de redémarrage
+            game.setScreen(new LevelScreen(gameManager, gameManager.getLevels().get(0)));
         }
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit(); // Quitter l'application

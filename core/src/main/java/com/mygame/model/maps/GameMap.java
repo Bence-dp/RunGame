@@ -39,6 +39,7 @@ public class GameMap {
         this.entityLayer = (MapLayer) map.getLayers().get("entity");
         this.obstacleLayer = (TiledMapTileLayer) map.getLayers().get("obstacles");
         this.world = world;
+
         createBox2DObstacles();
         createExit();
     }

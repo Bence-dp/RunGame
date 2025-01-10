@@ -22,22 +22,11 @@ public class Enemy extends GameEntity {
 
     }
 
-    private void createSensor() {
+    public void createSensor() {
         // Définir une forme de capteur autour du joueur pour interagir avec les collectibles
-        CircleShape shape = new CircleShape();
-        shape.setRadius(getSprite().getHeight()/1.4f); // Taille du capteur (ajustez si nécessaire)
-        shape.setPosition(new Vector2(0, getSprite().getHeight()/2)); // Vector2(0, 0) centre le capteur
-
-        FixtureDef fixtureDef = new FixtureDef();
-        fixtureDef.shape = shape;
-        fixtureDef.isSensor = true;  // Le capteur ne bloque pas la physique
-
-        // Crée la fixture sensorielle autour du joueur
-
-        Fixture fixture = getBody().createFixture(fixtureDef);
-        fixture.setUserData("deadzone");
+        getBody().getFixtureList().get(0).setSensor(true);
+        getBody().getFixtureList().get(0).setUserData("deadzone");
 
 
-        shape.dispose(); // Libère la mémoire utilisée par la forme du capteur
     }
 }

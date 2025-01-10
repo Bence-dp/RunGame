@@ -76,7 +76,7 @@ public abstract class GameEntity {
         fixtureDef.shape = shape;
         fixtureDef.density = 0.0f; // Densité par défaut
         fixtureDef.friction = 0.0f; // Friction
-        fixtureDef.restitution = 0.0f; // Élasticité
+        fixtureDef.restitution = 0.00f; // Élasticité
 
         // Créer la fixture pour le corps
         body.createFixture(fixtureDef);

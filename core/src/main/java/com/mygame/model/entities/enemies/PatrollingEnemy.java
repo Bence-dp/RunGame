@@ -28,10 +28,30 @@ public class PatrollingEnemy extends Enemy {
         super(x, y, sprite, world, BodyDef.BodyType.DynamicBody);
         this.movementStrategy = movementStrategy;
     }
+    @Override
+    public void createSensor() {
+        CircleShape shape = new CircleShape();
+        shape.setRadius(getSprite().getHeight()/1.4f); // Taille du capteur (ajustez si nécessaire)
+        shape.setPosition(new Vector2(0, getSprite().getHeight()/2)); // Vector2(0, 0) centre le capteur
 
-    /**
-     * Met à jour la physique de l'ennemi.
-     */
+        FixtureDef fixtureDef = new FixtureDef();
+        fixtureDef.shape = shape;
+        fixtureDef.isSensor = true;  // Le capteur ne bloque pas la physique
+
+        // Crée la fixture sensorielle autour du joueur
+
+        Fixture fixture = getBody().createFixture(fixtureDef);
+        fixture.setUserData("deadzone");
+
+
+        shape.dispose(); // Libère la mémoire utilisée par la forme du capteur
+
+    }
+
+
+        /**
+         * Met à jour la physique de l'ennemi.
+         */
     @Override
     public void updatePhysics() {
         if (getBody() == null || movementStrategy == null) {

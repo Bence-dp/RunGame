@@ -80,6 +80,18 @@ public class GameManager {
         }
         return instance;  // Retourne l'instance existante
     }
+    /**
+     * Retourne l'instance unique de GameManager.
+     *
+     * @return L'instance unique de GameManager.
+     * @throws IllegalStateException si GameManager n'est pas initialisé.
+     */
+    public static GameManager getGameManager() {
+        if (instance == null) {
+            throw new IllegalStateException("GameManager is not initialized. Call initialize() first.");
+        }
+        return instance;
+    }
 
     /**
      * Méthode appelée lorsqu'un niveau est terminé. Cette méthode gère l'ajout de pièces,
@@ -95,7 +107,18 @@ public class GameManager {
         } else {
             System.out.println("Aucun niveau suivant. Vous avez terminé tous les niveaux !");
             // Optionnel : Ajoutez une logique pour finir le jeu ou retourner au menu principal
-            game.setScreen(new EndGameScreen(game, this)); // Remplacez par votre écran de fin
+            game.setScreen(new EndGameScreen(game, this));
+        }
+    }
+    public void levelPassed() {
+        if (currentLevel.getNext() != null) {
+            currentLevel = currentLevel.getNext();
+            System.out.println("Niveau invalide! Passage au niveau suivant : " + currentLevel.getName());
+            game.setScreen(new LevelScreen(this, currentLevel));
+        } else {
+            System.out.println("Aucun niveau suivant. Vous avez terminé tous les niveaux !");
+            // Optionnel : Ajoutez une logique pour finir le jeu ou retourner au menu principal
+            game.setScreen(new EndGameScreen(game, this));
         }
     }
 

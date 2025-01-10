@@ -9,6 +9,7 @@ import com.mygame.model.maps.Level;
 import com.mygame.utils.JsonLoader;
 import com.mygame.utils.saver.SaveData;
 import com.mygame.utils.saver.SaveManager;
+import com.mygame.view.screen.BadMapScreen;
 import com.mygame.view.screen.FirstScreen;
 
 /**
@@ -31,10 +32,16 @@ public class Main extends Game {
         levels = JsonLoader.loadLevels("levels.json");
 
         // Initialiser le GameManager avec les niveaux chargés et le premier niveau
-        gameManager = GameManager.getInstance(this,levels ,levels.get(0));
+        if (!levels.isEmpty()) {
+            gameManager = GameManager.getInstance(this,levels ,levels.get(0));
+            // Lancer l'écran de démarrage
+            setScreen(new FirstScreen(gameManager));
 
-        // Lancer l'écran de démarrage
-        setScreen(new FirstScreen(gameManager));
+        }
+        else {
+            setScreen(new BadMapScreen(gameManager));
+        }
+
     }
 
 
@@ -46,14 +53,15 @@ public class Main extends Game {
     @Override
     public void dispose() {
         // Sauvegarder les données du jeu avant la fermeture
-        if (gameManager.getNeedSave()) {
-            SaveData saveData = new SaveData(gameManager.getCurrentLevel(), gameManager.getCoin());
-            SaveManager.saveGame(saveData);
+        if (gameManager != null) {
+            if (gameManager.getNeedSave()) {
+                SaveData saveData = new SaveData(gameManager.getCurrentLevel(), gameManager.getCoin());
+                SaveManager.saveGame(saveData);
 
 
-            System.out.println("Game saved during shutdown.");
+                System.out.println("Game saved during shutdown.");
+            }
         }
-
         // Appeler dispose() sur les autres ressources
         super.dispose();
     }

@@ -2,6 +2,7 @@ package com.mygame.model.entities.enemies;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.mygame.model.entities.Enemy;
 import com.mygame.controller.enemymovement.MovementStrategy;
@@ -38,7 +39,25 @@ public class FlyingEnemy extends Enemy {
 
         movementStrategy.updateMovement(getBody(), Gdx.graphics.getDeltaTime());
     }
+    @Override
+    public void createSensor() {
+        CircleShape shape = new CircleShape();
+        shape.setRadius(getSprite().getHeight()/1.4f); // Taille du capteur (ajustez si nécessaire)
+        shape.setPosition(new Vector2(0, getSprite().getHeight()/2)); // Vector2(0, 0) centre le capteur
 
+        FixtureDef fixtureDef = new FixtureDef();
+        fixtureDef.shape = shape;
+        fixtureDef.isSensor = true;  // Le capteur ne bloque pas la physique
+
+        // Crée la fixture sensorielle autour du joueur
+
+        Fixture fixture = getBody().createFixture(fixtureDef);
+        fixture.setUserData("deadzone");
+
+
+        shape.dispose(); // Libère la mémoire utilisée par la forme du capteur
+
+    }
     /**
      * Mise à jour de l'ennemi pendant chaque frame.
      *
