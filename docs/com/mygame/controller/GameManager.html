@@ -77,11 +77,10 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GameManager</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Gestionnaire principal du jeu. Cette classe est responsable de la gestion du joueur,
- des niveaux, des commandes et de la progression du jeu.
-
- Elle est implémentée en tant que Singleton, garantissant qu'il n'y a qu'une seule
- instance de cette classe dans l'ensemble du jeu.</div>
+<div class="block">Le gestionnaire principal du jeu. Cette classe est responsable de la gestion des éléments
+ du jeu, y compris le joueur, les niveaux, les commandes et la progression du jeu.
+ Elle est implémentée en tant que Singleton, garantissant qu'il n'existe qu'une seule instance
+ de cette classe dans le jeu.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -122,55 +121,77 @@ loadScripts(document, 'script');</script>
 <div class="block">Récupère l'instance principale du jeu.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="GameManager.html" title="class in com.mygame.controller">GameManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance(com.mygame.Main,com.badlogic.gdx.utils.Array,com.mygame.model.maps.Level)" class="member-name-link">getInstance</a><wbr>(<a href="../Main.html" title="class in com.mygame">Main</a>&nbsp;game,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getGameManager()" class="member-name-link">getGameManager</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Retourne l'instance unique de GameManager.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="GameManager.html" title="class in com.mygame.controller">GameManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance(com.mygame.Main,com.badlogic.gdx.utils.Array,com.mygame.model.maps.Level)" class="member-name-link">getInstance</a><wbr>(<a href="../Main.html" title="class in com.mygame">Main</a>&nbsp;game,
  com.badlogic.gdx.utils.Array&lt;<a href="../model/maps/Level.html" title="class in com.mygame.model.maps">Level</a>&gt;&nbsp;levels,
  <a href="../model/maps/Level.html" title="class in com.mygame.model.maps">Level</a>&nbsp;currentLevel)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Méthode statique pour obtenir l'instance unique de GameManager.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../config/KeyBindings.html" title="class in com.mygame.config">KeyBindings</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getKeyBindings()" class="member-name-link">getKeyBindings</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Récupère les bindings des touches (configurations des touches).</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.badlogic.gdx.utils.Array&lt;<a href="../model/maps/Level.html" title="class in com.mygame.model.maps">Level</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLevels()" class="member-name-link">getLevels</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../config/KeyBindings.html" title="class in com.mygame.config">KeyBindings</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getKeyBindings()" class="member-name-link">getKeyBindings</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Récupère l'instance des KeyBindings, qui définit les configurations des touches.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.badlogic.gdx.utils.Array&lt;<a href="../model/maps/Level.html" title="class in com.mygame.model.maps">Level</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLevels()" class="member-name-link">getLevels</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Récupère la liste des niveaux disponibles.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNeedSave()" class="member-name-link">getNeedSave</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Récupère l'indicateur qui spécifie si une sauvegarde est nécessaire.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../common/SoundFactory.html" title="class in com.mygame.common">SoundFactory</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSoundFactory()" class="member-name-link">getSoundFactory</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retourne l'instance de SoundFactory, utilisée pour gérer les sons du jeu.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#levelCompleted()" class="member-name-link">levelCompleted</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Méthode appelée lorsqu'un niveau est terminé.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resetInstance()" class="member-name-link">resetInstance</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Réinitialise l'instance de GameManager, utilisé pour recommencer le jeu.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveGame(com.mygame.model.maps.Level,int)" class="member-name-link">saveGame</a><wbr>(<a href="../model/maps/Level.html" title="class in com.mygame.model.maps">Level</a>&nbsp;level,
- int&nbsp;coin)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sauvegarde l'état actuel du jeu (niveau et pièces).</div>
+<div class="block">Méthode appelée lorsque le niveau est terminé.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCoin(int)" class="member-name-link">setCoin</a><wbr>(int&nbsp;coin)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#levelPassed()" class="member-name-link">levelPassed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Définit le nombre de pièces du joueur.</div>
+<div class="block">Méthode appelée si le niveau est passé, mais invalidé.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#resetInstance()" class="member-name-link">resetInstance</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Réinitialise l'instance de GameManager, utilisé pour recommencer le jeu.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveGame(com.mygame.model.maps.Level,int)" class="member-name-link">saveGame</a><wbr>(<a href="../model/maps/Level.html" title="class in com.mygame.model.maps">Level</a>&nbsp;level,
+ int&nbsp;coin)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sauvegarde l'état actuel du jeu (niveau et pièces).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentLevel(com.mygame.model.maps.Level)" class="member-name-link">setCurrentLevel</a><wbr>(<a href="../model/maps/Level.html" title="class in com.mygame.model.maps">Level</a>&nbsp;currentLevel)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCoin(int)" class="member-name-link">setCoin</a><wbr>(int&nbsp;coin)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Définit le nombre de pièces du joueur.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentLevel(com.mygame.model.maps.Level)" class="member-name-link">setCurrentLevel</a><wbr>(<a href="../model/maps/Level.html" title="class in com.mygame.model.maps">Level</a>&nbsp;currentLevel)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Définit le niveau actuel.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNeedSave(java.lang.Boolean)" class="member-name-link">setNeedSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;needSave)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Définit si l'état du jeu doit être sauvegardé.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setupCommands(com.mygame.model.entities.Player)" class="member-name-link">setupCommands</a><wbr>(<a href="../model/entities/Player.html" title="class in com.mygame.model.entities">Player</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Configure les commandes pour le joueur en fonction des touches définies dans les paramètres.</div>
+<div class="block">Configure les commandes du joueur en fonction des touches définies dans les paramètres.</div>
 </div>
 </div>
 </div>
@@ -207,12 +228,33 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="getGameManager()">
+<h3>getGameManager</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="GameManager.html" title="class in com.mygame.controller">GameManager</a></span>&nbsp;<span class="element-name">getGameManager</span>()</div>
+<div class="block">Retourne l'instance unique de GameManager.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>L'instance unique de GameManager.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - Si GameManager n'est pas initialisé.</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="levelCompleted()">
 <h3>levelCompleted</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">levelCompleted</span>()</div>
-<div class="block">Méthode appelée lorsqu'un niveau est terminé. Cette méthode gère l'ajout de pièces,
- la transition vers le niveau suivant, ou l'affichage de l'écran de fin de jeu si
- tous les niveaux sont terminés.</div>
+<div class="block">Méthode appelée lorsque le niveau est terminé. Gère l'ajout de pièces,
+ la transition vers le niveau suivant, ou l'affichage de l'écran de fin de jeu
+ si tous les niveaux sont terminés.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="levelPassed()">
+<h3>levelPassed</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">levelPassed</span>()</div>
+<div class="block">Méthode appelée si le niveau est passé, mais invalidé. Elle essaie de passer
+ au niveau suivant.</div>
 </section>
 </li>
 <li>
@@ -230,6 +272,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getSoundFactory()">
 <h3>getSoundFactory</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../common/SoundFactory.html" title="class in com.mygame.common">SoundFactory</a></span>&nbsp;<span class="element-name">getSoundFactory</span>()</div>
+<div class="block">Retourne l'instance de SoundFactory, utilisée pour gérer les sons du jeu.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>L'instance de SoundFactory.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -247,10 +294,32 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setupCommands(com.mygame.model.entities.Player)">
 <h3>setupCommands</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setupCommands</span><wbr><span class="parameters">(<a href="../model/entities/Player.html" title="class in com.mygame.model.entities">Player</a>&nbsp;player)</span></div>
-<div class="block">Configure les commandes pour le joueur en fonction des touches définies dans les paramètres.</div>
+<div class="block">Configure les commandes du joueur en fonction des touches définies dans les paramètres.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>player</code> - Le joueur pour lequel les commandes sont configurées.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setNeedSave(java.lang.Boolean)">
+<h3>setNeedSave</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setNeedSave</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;needSave)</span></div>
+<div class="block">Définit si l'état du jeu doit être sauvegardé.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>needSave</code> - Indique si le jeu nécessite une sauvegarde.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getNeedSave()">
+<h3>getNeedSave</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getNeedSave</span>()</div>
+<div class="block">Récupère l'indicateur qui spécifie si une sauvegarde est nécessaire.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> si le jeu nécessite une sauvegarde, sinon <code>false</code>.</dd>
 </dl>
 </section>
 </li>
@@ -280,7 +349,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getKeyBindings()">
 <h3>getKeyBindings</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../config/KeyBindings.html" title="class in com.mygame.config">KeyBindings</a></span>&nbsp;<span class="element-name">getKeyBindings</span>()</div>
-<div class="block">Récupère les bindings des touches (configurations des touches).</div>
+<div class="block">Récupère l'instance des KeyBindings, qui définit les configurations des touches.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>L'instance des KeyBindings.</dd>

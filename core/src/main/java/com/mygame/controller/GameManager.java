@@ -18,11 +18,10 @@ import com.mygame.view.screen.EndGameScreen;
 import com.mygame.view.screen.LevelScreen;
 
 /**
- * Gestionnaire principal du jeu. Cette classe est responsable de la gestion du joueur,
- * des niveaux, des commandes et de la progression du jeu.
- *
- * Elle est implémentée en tant que Singleton, garantissant qu'il n'y a qu'une seule
- * instance de cette classe dans l'ensemble du jeu.
+ * Le gestionnaire principal du jeu. Cette classe est responsable de la gestion des éléments
+ * du jeu, y compris le joueur, les niveaux, les commandes et la progression du jeu.
+ * Elle est implémentée en tant que Singleton, garantissant qu'il n'existe qu'une seule instance
+ * de cette classe dans le jeu.
  */
 public class GameManager {
 
@@ -41,8 +40,8 @@ public class GameManager {
     private int coin;
 
     /**
-     * Constructeur privé de la classe GameManager. Initialise les composants du jeu,
-     * tels que le joueur, l'EntityFactory et la configuration des commandes.
+     * Constructeur privé du GameManager. Initialise les composants du jeu, comme le joueur,
+     * l'EntityFactory et la configuration des commandes.
      *
      * @param game L'instance principale du jeu.
      * @param levels La liste des niveaux disponibles.
@@ -80,11 +79,12 @@ public class GameManager {
         }
         return instance;  // Retourne l'instance existante
     }
+
     /**
      * Retourne l'instance unique de GameManager.
      *
      * @return L'instance unique de GameManager.
-     * @throws IllegalStateException si GameManager n'est pas initialisé.
+     * @throws IllegalStateException Si GameManager n'est pas initialisé.
      */
     public static GameManager getGameManager() {
         if (instance == null) {
@@ -94,9 +94,9 @@ public class GameManager {
     }
 
     /**
-     * Méthode appelée lorsqu'un niveau est terminé. Cette méthode gère l'ajout de pièces,
-     * la transition vers le niveau suivant, ou l'affichage de l'écran de fin de jeu si
-     * tous les niveaux sont terminés.
+     * Méthode appelée lorsque le niveau est terminé. Gère l'ajout de pièces,
+     * la transition vers le niveau suivant, ou l'affichage de l'écran de fin de jeu
+     * si tous les niveaux sont terminés.
      */
     public void levelCompleted() {
         addCoin(getEntityFactory().getPlayer().getScore());
@@ -106,10 +106,14 @@ public class GameManager {
             game.setScreen(new LevelScreen(this, currentLevel));
         } else {
             System.out.println("Aucun niveau suivant. Vous avez terminé tous les niveaux !");
-            // Optionnel : Ajoutez une logique pour finir le jeu ou retourner au menu principal
             game.setScreen(new EndGameScreen(game, this));
         }
     }
+
+    /**
+     * Méthode appelée si le niveau est passé, mais invalidé. Elle essaie de passer
+     * au niveau suivant.
+     */
     public void levelPassed() {
         if (currentLevel.getNext() != null) {
             currentLevel = currentLevel.getNext();
@@ -117,7 +121,6 @@ public class GameManager {
             game.setScreen(new LevelScreen(this, currentLevel));
         } else {
             System.out.println("Aucun niveau suivant. Vous avez terminé tous les niveaux !");
-            // Optionnel : Ajoutez une logique pour finir le jeu ou retourner au menu principal
             game.setScreen(new EndGameScreen(game, this));
         }
     }
@@ -130,6 +133,12 @@ public class GameManager {
     public Level getCurrentLevel() {
         return currentLevel;
     }
+
+    /**
+     * Retourne l'instance de SoundFactory, utilisée pour gérer les sons du jeu.
+     *
+     * @return L'instance de SoundFactory.
+     */
     public SoundFactory getSoundFactory() {
         return soundFactory;
     }
@@ -144,7 +153,7 @@ public class GameManager {
     }
 
     /**
-     * Configure les commandes pour le joueur en fonction des touches définies dans les paramètres.
+     * Configure les commandes du joueur en fonction des touches définies dans les paramètres.
      *
      * @param player Le joueur pour lequel les commandes sont configurées.
      */
@@ -154,9 +163,20 @@ public class GameManager {
         commands.put(keyBindings.getJumpKey(), new JumpCommand(player));
     }
 
+    /**
+     * Définit si l'état du jeu doit être sauvegardé.
+     *
+     * @param needSave Indique si le jeu nécessite une sauvegarde.
+     */
     public void setNeedSave(Boolean needSave) {
         this.needSave = needSave;
     }
+
+    /**
+     * Récupère l'indicateur qui spécifie si une sauvegarde est nécessaire.
+     *
+     * @return {@code true} si le jeu nécessite une sauvegarde, sinon {@code false}.
+     */
     public boolean getNeedSave() {
         return needSave;
     }
@@ -180,7 +200,7 @@ public class GameManager {
     }
 
     /**
-     * Récupère les bindings des touches (configurations des touches).
+     * Récupère l'instance des KeyBindings, qui définit les configurations des touches.
      *
      * @return L'instance des KeyBindings.
      */

@@ -83,6 +83,13 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Enemy</span>
 <span class="extends-implements">extends <a href="GameEntity.html" title="class in com.mygame.model.entities">GameEntity</a></span></div>
+<div class="block">La classe <code>Enemy</code> représente un ennemi dans le jeu.
+ Un ennemi est une entité du jeu qui possède une position, une texture (sprite),
+ et un comportement physique dans le monde Box2D. Il peut interagir avec d'autres entités,
+ notamment le joueur et les objets collectables.
+
+ <p>Les ennemis peuvent avoir un mouvement spécifique ou un comportement de détection,
+ mais cette classe de base fournit les fonctionnalités générales pour un ennemi dans le jeu.</p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -99,7 +106,9 @@ loadScripts(document, 'script');</script>
  com.badlogic.gdx.graphics.g2d.Sprite&nbsp;sprite,
  com.badlogic.gdx.physics.box2d.World&nbsp;world,
  com.badlogic.gdx.physics.box2d.BodyDef.BodyType&nbsp;type)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructeur de la classe <code>Enemy</code>.</div>
+</div>
 </div>
 </section>
 </li>
@@ -115,14 +124,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(float)" class="member-name-link">update</a><wbr>(float&nbsp;deltaTime)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createSensor()" class="member-name-link">createSensor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Mise à jour de l'entité, appelée à chaque frame.</div>
+<div class="block">Crée un capteur autour de l'ennemi pour détecter des objets, tels que des collectibles ou des zones d'attaque.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePhysics()" class="member-name-link">updatePhysics</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(float)" class="member-name-link">update</a><wbr>(float&nbsp;deltaTime)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Méthode abstraite pour mettre à jour la physique de l'entité.</div>
+<div class="block">Met à jour l'ennemi à chaque frame.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePhysics()" class="member-name-link">updatePhysics</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Met à jour la physique de l'ennemi.</div>
 </div>
 </div>
 </div>
@@ -152,6 +166,15 @@ loadScripts(document, 'script');</script>
  com.badlogic.gdx.graphics.g2d.Sprite&nbsp;sprite,
  com.badlogic.gdx.physics.box2d.World&nbsp;world,
  com.badlogic.gdx.physics.box2d.BodyDef.BodyType&nbsp;type)</span></div>
+<div class="block">Constructeur de la classe <code>Enemy</code>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>x</code> - La position X de l'ennemi dans le monde du jeu (en pixels).</dd>
+<dd><code>y</code> - La position Y de l'ennemi dans le monde du jeu (en pixels).</dd>
+<dd><code>sprite</code> - Le sprite (texture) de l'ennemi.</dd>
+<dd><code>world</code> - Le monde physique Box2D dans lequel l'ennemi sera placé.</dd>
+<dd><code>type</code> - Le type du corps physique (statique, dynamique, etc.) de l'ennemi.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -166,9 +189,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="update(float)">
 <h3>update</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(float&nbsp;deltaTime)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="GameEntity.html#update(float)">GameEntity</a></code></span></div>
-<div class="block">Mise à jour de l'entité, appelée à chaque frame.
- Cette méthode synchronise la position du sprite avec celle du corps Box2D.</div>
+<div class="block">Met à jour l'ennemi à chaque frame. Cette méthode peut contenir la logique spécifique
+ aux ennemis, comme les déplacements ou les animations.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="GameEntity.html#update(float)">update</a></code>&nbsp;in class&nbsp;<code><a href="GameEntity.html" title="class in com.mygame.model.entities">GameEntity</a></code></dd>
@@ -181,13 +203,23 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="updatePhysics()">
 <h3>updatePhysics</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updatePhysics</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="GameEntity.html#updatePhysics()">GameEntity</a></code></span></div>
-<div class="block">Méthode abstraite pour mettre à jour la physique de l'entité.
- Cette méthode doit être implémentée dans les classes concrètes.</div>
+<div class="block">Met à jour la physique de l'ennemi. Cette méthode peut être utilisée pour mettre à jour
+ le comportement physique de l'ennemi, mais ici elle est vide car les ennemis peuvent
+ ne pas avoir de comportements physiques complexes.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="GameEntity.html#updatePhysics()">updatePhysics</a></code>&nbsp;in class&nbsp;<code><a href="GameEntity.html" title="class in com.mygame.model.entities">GameEntity</a></code></dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createSensor()">
+<h3>createSensor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createSensor</span>()</div>
+<div class="block">Crée un capteur autour de l'ennemi pour détecter des objets, tels que des collectibles ou des zones d'attaque.
+ Ce capteur est utilisé pour activer des interactions sans modifier la physique de l'ennemi.
+ Le capteur est créé sur la première fixture du corps et est configuré comme un "sensor".
+ Un "sensor" est une fixture qui ne génère pas de force physique mais peut déclencher des événements de collision.</div>
 </section>
 </li>
 </ul>

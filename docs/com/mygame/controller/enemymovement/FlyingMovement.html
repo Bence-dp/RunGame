@@ -82,6 +82,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">FlyingMovement</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="MovementStrategy.html" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a></span></div>
+<div class="block">Implémentation de la stratégie de mouvement pour un ennemi volant, qui suit un
+ chemin en forme de "8" horizontal. L'ennemi se déplace à la fois sur l'axe X et
+ l'axe Y de manière sinusoïdale pour créer un mouvement fluide et circulaire.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -98,7 +101,9 @@ implements <a href="MovementStrategy.html" title="interface in com.mygame.contro
  float&nbsp;patrolWidth,
  float&nbsp;patrolHeight,
  float&nbsp;speed)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructeur pour initialiser le mouvement de l'ennemi volant.</div>
+</div>
 </div>
 </section>
 </li>
@@ -117,7 +122,8 @@ implements <a href="MovementStrategy.html" title="interface in com.mygame.contro
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)" class="member-name-link">updateMovement</a><wbr>(com.badlogic.gdx.physics.box2d.Body&nbsp;body,
  float&nbsp;deltaTime)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Met à jour le mouvement en fonction de la physique et de la logique de la stratégie.</div>
+<div class="block">Met à jour la position de l'ennemi en fonction de son mouvement sinusoïdal dans
+ la zone de patrouille.</div>
 </div>
 </div>
 </div>
@@ -144,6 +150,15 @@ implements <a href="MovementStrategy.html" title="interface in com.mygame.contro
  float&nbsp;patrolWidth,
  float&nbsp;patrolHeight,
  float&nbsp;speed)</span></div>
+<div class="block">Constructeur pour initialiser le mouvement de l'ennemi volant.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>startX</code> - La position initiale en X de l'ennemi.</dd>
+<dd><code>startY</code> - La position initiale en Y de l'ennemi.</dd>
+<dd><code>patrolWidth</code> - La largeur de la zone de patrouille.</dd>
+<dd><code>patrolHeight</code> - La hauteur de la zone de patrouille.</dd>
+<dd><code>speed</code> - La vitesse du mouvement.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -159,13 +174,13 @@ implements <a href="MovementStrategy.html" title="interface in com.mygame.contro
 <h3>updateMovement</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateMovement</span><wbr><span class="parameters">(com.badlogic.gdx.physics.box2d.Body&nbsp;body,
  float&nbsp;deltaTime)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="MovementStrategy.html#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)">MovementStrategy</a></code></span></div>
-<div class="block">Met à jour le mouvement en fonction de la physique et de la logique de la stratégie.</div>
+<div class="block">Met à jour la position de l'ennemi en fonction de son mouvement sinusoïdal dans
+ la zone de patrouille.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="MovementStrategy.html#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)">updateMovement</a></code>&nbsp;in interface&nbsp;<code><a href="MovementStrategy.html" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>body</code> - Le corps physique de l'ennemi à déplacer.</dd>
+<dd><code>body</code> - L'objet Body représentant l'ennemi.</dd>
 <dd><code>deltaTime</code> - Le temps écoulé depuis la dernière mise à jour.</dd>
 </dl>
 </section>

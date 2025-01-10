@@ -59,16 +59,28 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/validation/AbstractValidator.html" title="class in com.mygame.validation">AbstractValidator</a>&lt;<a href="com/mygame/validation/AbstractValidator.html" title="type parameter in AbstractValidator">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Classe abstraite qui implémente le pattern de validation en chaîne.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/view/screen/BadMapScreen.html" title="class in com.mygame.view.screen">BadMapScreen</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">La classe <code>BadMapScreen</code> représente l'écran affiché lorsque les cartes dans le fichier JSON
+ ne sont pas valides.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/maps/obstacles/BounceObstacle.html" title="class in com.mygame.model.maps.obstacles">BounceObstacle</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
-<div class="block">La classe <code>BounceObstacle</code> représente un obstacle rebondissant dans le jeu.</div>
+<div class="block">La classe <code>BounceObstacle</code> représente un obstacle dans le jeu qui
+ offre un effet de rebond lorsqu'un autre objet entre en contact avec lui.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/collectibles/Coin.html" title="class in com.mygame.model.entities.collectibles">Coin</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Représente une pièce (coin) dans le jeu, qui peut être collectée par le joueur.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/Collectible.html" title="class in com.mygame.model.entities">Collectible</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Représente un objet collectable dans le jeu, comme un "coin" ou une "life".</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/utils/ContactListener/CollectibleListener.html" title="class in com.mygame.utils.ContactListener">CollectibleListener</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">La classe <code>CollectibleListener</code> est un écouteur de contacts qui gère la collecte des objets (collectibles)
@@ -97,60 +109,73 @@ loadScripts(document, 'script');</script>
 <div class="block">L'écran de fin de jeu qui s'affiche lorsque le joueur termine une partie.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/Enemy.html" title="class in com.mygame.model.entities">Enemy</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">La classe <code>Enemy</code> représente un ennemi dans le jeu.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/common/EntityFactory.html" title="class in com.mygame.common">EntityFactory</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Factory responsable de la création et de la gestion des entités du jeu.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/utils/ContactListener/ExitListener.html" title="class in com.mygame.utils.ContactListener">ExitListener</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/validation/ExitExistsValidator.html" title="class in com.mygame.validation">ExitExistsValidator</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Un validateur qui vérifie la présence d'un layer "teleporter" dans une carte.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/utils/ContactListener/ExitListener.html" title="class in com.mygame.utils.ContactListener">ExitListener</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">La classe <code>ExitListener</code> écoute les contacts entre le joueur et la sortie d'un niveau.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/view/screen/FirstScreen.html" title="class in com.mygame.view.screen">FirstScreen</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/view/screen/FirstScreen.html" title="class in com.mygame.view.screen">FirstScreen</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">L'écran d'accueil du jeu qui s'affiche avant le menu principal.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/enemies/FlyingEnemy.html" title="class in com.mygame.model.entities.enemies">FlyingEnemy</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/enemies/FlyingEnemy.html" title="class in com.mygame.model.entities.enemies">FlyingEnemy</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Représente un ennemi volant qui utilise une stratégie de mouvement.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/enemymovement/FlyingMovement.html" title="class in com.mygame.controller.enemymovement">FlyingMovement</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/GameEntity.html" title="class in com.mygame.model.entities">GameEntity</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/enemymovement/FlyingMovement.html" title="class in com.mygame.controller.enemymovement">FlyingMovement</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Implémentation de la stratégie de mouvement pour un ennemi volant, qui suit un
+ chemin en forme de "8" horizontal.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/GameEntity.html" title="class in com.mygame.model.entities">GameEntity</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Représente une entité dans le jeu, incluant à la fois un sprite et un corps physique Box2D.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/view/screen/HUD/GameHUD.html" title="class in com.mygame.view.screen.HUD">GameHUD</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/view/screen/HUD/GameHUD.html" title="class in com.mygame.view.screen.HUD">GameHUD</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">La classe <code>GameHUD</code> est responsable de l'affichage de l'interface utilisateur
  (HUD) dans le jeu, incluant des informations telles que le temps écoulé, le nombre de pièces collectées
  et le nom du niveau.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/GameManager.html" title="class in com.mygame.controller">GameManager</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Gestionnaire principal du jeu.</div>
-</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/maps/GameMap.html" title="class in com.mygame.model.maps">GameMap</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/GameManager.html" title="class in com.mygame.controller">GameManager</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Le gestionnaire principal du jeu.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/maps/GameMap.html" title="class in com.mygame.model.maps">GameMap</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">La classe <code>GameMap</code> permet de gérer la carte du jeu,
  y compris la gestion des obstacles et la simulation physique via Box2D.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/InputHandler.html" title="class in com.mygame.controller">InputHandler</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/InputHandler.html" title="class in com.mygame.controller">InputHandler</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Classe responsable de la gestion des entrées utilisateur dans le jeu, telles que les
  touches du clavier et les commandes associées au mouvement du joueur.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/utils/JsonLoader.html" title="class in com.mygame.utils">JsonLoader</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/utils/JsonLoader.html" title="class in com.mygame.utils">JsonLoader</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Classe utilitaire pour charger les données JSON, spécifiquement les niveaux du jeu.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/commands/JumpCommand.html" title="class in com.mygame.controller.commands">JumpCommand</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/commands/JumpCommand.html" title="class in com.mygame.controller.commands">JumpCommand</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Classe représentant la commande de saut du joueur.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/config/KeyBindings.html" title="class in com.mygame.config">KeyBindings</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/config/KeyBindings.html" title="class in com.mygame.config">KeyBindings</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Classe de gestion des bindings de touches du jeu.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/validation/LayersExistValidator.html" title="class in com.mygame.validation">LayersExistValidator</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">La classe <code>LayersExistValidator</code> est un validateur qui vérifie la présence des layers nécessaires dans une carte <code>TiledMap</code>.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/maps/Level.html" title="class in com.mygame.model.maps">Level</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
@@ -188,47 +213,59 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">La classe <code>MapObstacle</code> représente un obstacle sur la carte du jeu.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/view/screen/MenuScreen.html" title="class in com.mygame.view.screen">MenuScreen</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/validation/MapValidator.html" title="class in com.mygame.validation">MapValidator</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">La classe <code>MapValidator</code> est responsable de la validation d'une carte TiledMap.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/view/screen/MenuScreen.html" title="class in com.mygame.view.screen">MenuScreen</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Écran représentant le menu principal du jeu.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/commands/MoveLeftCommand.html" title="class in com.mygame.controller.commands">MoveLeftCommand</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/commands/MoveLeftCommand.html" title="class in com.mygame.controller.commands">MoveLeftCommand</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Classe représentant la commande de mouvement à gauche du joueur.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/mygame/controller/enemymovement/MovementStrategy.html" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/mygame/controller/enemymovement/MovementStrategy.html" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Interface définissant une stratégie de mouvement pour les ennemis.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/commands/MoveRightCommand.html" title="class in com.mygame.controller.commands">MoveRightCommand</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/commands/MoveRightCommand.html" title="class in com.mygame.controller.commands">MoveRightCommand</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Classe représentant la commande de mouvement à droite du joueur.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/maps/obstacles/Obstacle.html" title="class in com.mygame.model.maps.obstacles">Obstacle</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/maps/obstacles/Obstacle.html" title="class in com.mygame.model.maps.obstacles">Obstacle</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Classe abstraite <code>Obstacle</code> pour représenter un obstacle générique dans une carte de jeu.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/enemies/PatrollingEnemy.html" title="class in com.mygame.model.entities.enemies">PatrollingEnemy</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/enemies/PatrollingEnemy.html" title="class in com.mygame.model.entities.enemies">PatrollingEnemy</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Représente un ennemi patrouillant qui utilise une stratégie de mouvement horizontal.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/enemymovement/PatrollingMovement.html" title="class in com.mygame.controller.enemymovement">PatrollingMovement</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/Player.html" title="class in com.mygame.model.entities">Player</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/controller/enemymovement/PatrollingMovement.html" title="class in com.mygame.controller.enemymovement">PatrollingMovement</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">La classe <code>PatrollingMovement</code> représente une stratégie de mouvement pour un ennemi qui effectue
+ une patrouille d'un côté à l'autre sur une certaine largeur.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/entities/Player.html" title="class in com.mygame.model.entities">Player</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Représente un joueur dans le jeu.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/utils/saver/SaveData.html" title="class in com.mygame.utils.saver">SaveData</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/utils/saver/SaveData.html" title="class in com.mygame.utils.saver">SaveData</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">La classe <code>SaveData</code> représente les données de sauvegarde d'un jeu.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/utils/saver/SaveManager.html" title="class in com.mygame.utils.saver">SaveManager</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/utils/saver/SaveManager.html" title="class in com.mygame.utils.saver">SaveManager</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">La classe <code>SaveManager</code> est responsable de la sauvegarde des données de jeu.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/view/screen/SettingsScreen.html" title="class in com.mygame.view.screen">SettingsScreen</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/view/screen/SettingsScreen.html" title="class in com.mygame.view.screen">SettingsScreen</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">L'écran des paramètres où les utilisateurs peuvent remapper les contrôles du jeu.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/validation/SinglePlayerValidator.html" title="class in com.mygame.validation">SinglePlayerValidator</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">La classe <code>SinglePlayerValidator</code> est un validateur qui vérifie qu'il y a exactement un objet "player"
+ dans le layer "entity" d'une carte de type <code>TiledMap</code>.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/maps/obstacles/SolidObstacle.html" title="class in com.mygame.model.maps.obstacles">SolidObstacle</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
@@ -245,6 +282,10 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/mygame/model/maps/obstacles/Teleporter.html" title="class in com.mygame.model.maps.obstacles">Teleporter</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Représente un téléporteur dans le jeu.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/mygame/validation/Validator.html" title="interface in com.mygame.validation">Validator</a>&lt;<a href="com/mygame/validation/Validator.html" title="type parameter in Validator">T</a>&gt;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">L'interface <code>Validator</code> définit un contrat pour les classes de validation.</div>
 </div>
 </div>
 </div>

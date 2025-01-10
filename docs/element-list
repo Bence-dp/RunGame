@@ -13,5 +13,6 @@ com.mygame.model.maps.obstacles
 com.mygame.utils
 com.mygame.utils.ContactListener
 com.mygame.utils.saver
+com.mygame.validation
 com.mygame.view.screen
 com.mygame.view.screen.HUD

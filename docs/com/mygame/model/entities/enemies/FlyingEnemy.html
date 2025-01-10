@@ -116,13 +116,18 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(float)" class="member-name-link">update</a><wbr>(float&nbsp;deltaTime)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createSensor()" class="member-name-link">createSensor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Mise à jour de l'ennemi pendant chaque frame.</div>
+<div class="block">Crée un capteur autour de l'ennemi pour détecter des objets, tels que des collectibles ou des zones d'attaque.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePhysics()" class="member-name-link">updatePhysics</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(float)" class="member-name-link">update</a><wbr>(float&nbsp;deltaTime)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Mise à jour de l'ennemi pendant chaque frame.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updatePhysics()" class="member-name-link">updatePhysics</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Met à jour la physique de l'ennemi.</div>
 </div>
 </div>
@@ -180,6 +185,21 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="../Enemy.html#updatePhysics()">updatePhysics</a></code>&nbsp;in class&nbsp;<code><a href="../Enemy.html" title="class in com.mygame.model.entities">Enemy</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createSensor()">
+<h3>createSensor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createSensor</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../Enemy.html#createSensor()">Enemy</a></code></span></div>
+<div class="block">Crée un capteur autour de l'ennemi pour détecter des objets, tels que des collectibles ou des zones d'attaque.
+ Ce capteur est utilisé pour activer des interactions sans modifier la physique de l'ennemi.
+ Le capteur est créé sur la première fixture du corps et est configuré comme un "sensor".
+ Un "sensor" est une fixture qui ne génère pas de force physique mais peut déclencher des événements de collision.</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="../Enemy.html#createSensor()">createSensor</a></code>&nbsp;in class&nbsp;<code><a href="../Enemy.html" title="class in com.mygame.model.entities">Enemy</a></code></dd>
 </dl>
 </section>
 </li>

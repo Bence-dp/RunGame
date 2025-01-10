@@ -3,7 +3,19 @@ package com.mygame.validation;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 
+/**
+ * Un validateur qui vérifie la présence d'un layer "teleporter" dans une carte.
+ * Ce layer est supposé représenter la sortie du niveau. Si ce layer est manquant
+ * ou vide, la carte est considérée comme invalide.
+ */
 public class ExitExistsValidator extends AbstractValidator<TiledMap> {
+
+    /**
+     * Valide la carte en vérifiant si le layer "teleporter" existe et contient des objets.
+     *
+     * @param map La carte à valider.
+     * @return true si le layer "teleporter" est présent et contient des objets, sinon false.
+     */
     @Override
     public boolean validate(TiledMap map) {
         MapLayer exitLayer = map.getLayers().get("teleporter");
@@ -18,5 +30,4 @@ public class ExitExistsValidator extends AbstractValidator<TiledMap> {
 
         return true;  // La carte est valide
     }
-
 }

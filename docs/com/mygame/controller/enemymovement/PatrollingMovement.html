@@ -82,6 +82,12 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">PatrollingMovement</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="MovementStrategy.html" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a></span></div>
+<div class="block">La classe <code>PatrollingMovement</code> représente une stratégie de mouvement pour un ennemi qui effectue
+ une patrouille d'un côté à l'autre sur une certaine largeur. L'ennemi se déplace de manière linéaire
+ sur un axe horizontal, allant d'un point de départ à un point d'arrêt, puis inversant la direction.
+
+ <p>Cette stratégie de mouvement est utilisée pour simuler un ennemi qui garde une zone définie,
+ se déplaçant d'un côté à l'autre dans un comportement de patrouille.</p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -96,7 +102,9 @@ implements <a href="MovementStrategy.html" title="interface in com.mygame.contro
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(float,float,float)" class="member-name-link">PatrollingMovement</a><wbr>(float&nbsp;startX,
  float&nbsp;patrolWidth,
  float&nbsp;speed)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructeur de la classe <code>PatrollingMovement</code>.</div>
+</div>
 </div>
 </section>
 </li>
@@ -115,7 +123,7 @@ implements <a href="MovementStrategy.html" title="interface in com.mygame.contro
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)" class="member-name-link">updateMovement</a><wbr>(com.badlogic.gdx.physics.box2d.Body&nbsp;body,
  float&nbsp;deltaTime)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Met à jour le mouvement en fonction de la physique et de la logique de la stratégie.</div>
+<div class="block">Met à jour la position et la vitesse du corps de l'ennemi pour le déplacer selon la stratégie de patrouille.</div>
 </div>
 </div>
 </div>
@@ -140,6 +148,13 @@ implements <a href="MovementStrategy.html" title="interface in com.mygame.contro
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">PatrollingMovement</span><wbr><span class="parameters">(float&nbsp;startX,
  float&nbsp;patrolWidth,
  float&nbsp;speed)</span></div>
+<div class="block">Constructeur de la classe <code>PatrollingMovement</code>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>startX</code> - La position X de départ de l'ennemi, où il commence à patrouiller.</dd>
+<dd><code>patrolWidth</code> - La largeur de la zone de patrouille (la distance maximale parcourue dans chaque direction).</dd>
+<dd><code>speed</code> - La vitesse à laquelle l'ennemi se déplace pendant la patrouille.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -155,14 +170,15 @@ implements <a href="MovementStrategy.html" title="interface in com.mygame.contro
 <h3>updateMovement</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateMovement</span><wbr><span class="parameters">(com.badlogic.gdx.physics.box2d.Body&nbsp;body,
  float&nbsp;deltaTime)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="MovementStrategy.html#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)">MovementStrategy</a></code></span></div>
-<div class="block">Met à jour le mouvement en fonction de la physique et de la logique de la stratégie.</div>
+<div class="block">Met à jour la position et la vitesse du corps de l'ennemi pour le déplacer selon la stratégie de patrouille.
+ L'ennemi se déplace à gauche et à droite dans la zone de patrouille définie, et inverse sa direction
+ lorsqu'il atteint l'une des bornes de la zone.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="MovementStrategy.html#updateMovement(com.badlogic.gdx.physics.box2d.Body,float)">updateMovement</a></code>&nbsp;in interface&nbsp;<code><a href="MovementStrategy.html" title="interface in com.mygame.controller.enemymovement">MovementStrategy</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>body</code> - Le corps physique de l'ennemi à déplacer.</dd>
-<dd><code>deltaTime</code> - Le temps écoulé depuis la dernière mise à jour.</dd>
+<dd><code>body</code> - Le corps physique de l'ennemi, utilisé pour mettre à jour sa position.</dd>
+<dd><code>deltaTime</code> - Le temps écoulé entre les mises à jour (utile pour les calculs de physique et de mouvement).</dd>
 </dl>
 </section>
 </li>
