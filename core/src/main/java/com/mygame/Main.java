@@ -23,7 +23,7 @@ public class Main extends Game {
 
     /**
      * Méthode appelée lors de la création du jeu.
-     * Charge les niveaux à partir du fichier JSON et initialise le gestionnaire de jeu.
+     * Lit le fichier JSON et initialise le gestionnaire de jeu.
      * Ensuite, elle lance l'écran principal du jeu (FirstScreen).
      */
     @Override
