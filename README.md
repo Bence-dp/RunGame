@@ -69,9 +69,9 @@ Consultez la documentation Javadoc pour les détails sur l'API et les classes :
 
 ## Documentation PDF
 
-Une version PDF de la documentation est également disponible :
+Un compte rendu PDF est également disponible :
 
-[Documentation PDF](Compte_rendu_DiPlacidoBence.pdf)
+[Compte rendu PDF](Compte_rendu_DiPlacidoBence.pdf)
 
 ---
 
