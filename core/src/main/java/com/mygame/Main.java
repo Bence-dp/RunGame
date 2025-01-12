@@ -14,7 +14,7 @@ import com.mygame.view.screen.FirstScreen;
 
 /**
  * Classe principale du jeu qui gère la création et la fermeture du jeu.
- * Cette classe charge les niveaux, crée le gestionnaire de jeu, et lance l'écran initial.
+ * Cette classe récupère les niveaux d'un json, crée le gestionnaire de jeu, et lance l'écran initial.
  */
 public class Main extends Game {
 
